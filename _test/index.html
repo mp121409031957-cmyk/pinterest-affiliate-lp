@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pipeline Test</title>
+<style>
+  :root {
+    --primary: #2f4538;
+    --background: #f7f3ee;
+    --accent: #c98a9a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--background);
+    color: #2a2a2a;
+    font-family: "Segoe UI", Arial, sans-serif;
+  }
+  header {
+    background: var(--primary);
+    color: #fff;
+    padding: 3rem 1.5rem 2.5rem;
+    text-align: center;
+  }
+  header h1 { margin: 0 0 0.5rem; font-size: 2rem; }
+  header p { margin: 0; opacity: 0.85; }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+  }
+  .product {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  }
+  .product img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .product h2 { margin: 0 0 0.4rem; font-size: 1.2rem; }
+  .rating { color: #b8860b; font-size: 0.95rem; margin-bottom: 0.6rem; }
+  .rating .count { color: #888; margin-left: 0.4em; }
+  .price { font-weight: bold; font-size: 1.15rem; margin-bottom: 0.6rem; }
+  .blurb { margin: 0 0 1rem; line-height: 1.6; }
+  .cta {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.7rem 1.4rem;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.8rem;
+    color: #777;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Pipeline Test</h1>
+  <p>Curated picks, real reviews, real bestsellers.</p>
+</header>
+<main>
+  
+  <div class="product">
+    <img src="pin_1.jpg" alt="Test Product">
+    <h2>Test Product</h2>
+    
+    <div class="rating">★★★★☆ 4.6<span class="count">(3,200 reviews)</span></div>
+    
+    <div class="price">$24.99</div>
+    <p class="blurb">A quick pipeline smoke test product blurb.</p>
+    <a class="cta" href="https://amzn.to/PLACEHOLDER" target="_blank" rel="nofollow noopener sponsored">View on Amazon →</a>
+  </div>
+  
+</main>
+<footer>
+  As an Amazon Associate I earn from qualifying purchases.
+</footer>
+</body>
+</html>
