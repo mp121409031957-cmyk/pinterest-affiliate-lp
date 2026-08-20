@@ -48,6 +48,23 @@
   .rating .count { color: #888; margin-left: 0.4em; }
   .price { font-weight: bold; font-size: 1.15rem; margin-bottom: 0.6rem; }
   .blurb { margin: 0 0 1rem; line-height: 1.6; }
+  .quote {
+    margin: 0 0 1rem;
+    padding: 0.6rem 1rem;
+    border-left: 3px solid var(--primary);
+    background: var(--background);
+    font-style: italic;
+    line-height: 1.5;
+  }
+  .quote::before { content: "\201C"; }
+  .quote::after { content: "\201D"; }
+  .quote-attr {
+    display: block;
+    margin-top: 0.4rem;
+    font-style: normal;
+    font-size: 0.8rem;
+    color: #888;
+  }
   .cta {
     display: inline-block;
     background: var(--accent);
@@ -80,6 +97,7 @@
     
     <div class="price">$26.80</div>
     <p class="blurb">A simple striped noren curtain in matcha green — nearly 5,000 Amazon reviews make this the most-loved doorway curtain on Amazon. Hand-washable cotton blend, installs in minutes with a tension rod.</p>
+    
     <a class="cta" href="https://amazon.com/dp/B0FQT1447R?tag=naoko08-20" target="_blank" rel="nofollow noopener sponsored">View on Amazon →</a>
   </div>
   
@@ -91,6 +109,7 @@
     
     <div class="price">$23.99</div>
     <p class="blurb">A dreamy sakura-and-Fuji scene on lightweight fabric — this noren brings a soft, springtime version of Japan into any hallway, apartment, or bedroom doorway.</p>
+    
     <a class="cta" href="https://amazon.com/dp/B07PRH5DBC?tag=naoko08-20" target="_blank" rel="nofollow noopener sponsored">View on Amazon →</a>
   </div>
   
@@ -102,6 +121,7 @@
     
     <div class="price">$23.99</div>
     <p class="blurb">A dramatic golden dragon rising over ocean waves beneath Mount Fuji — a bold, traditional-art noren for anyone who wants their Japanese doorway curtain to be a conversation piece.</p>
+    
     <a class="cta" href="https://amazon.com/dp/B001P6GJPI?tag=naoko08-20" target="_blank" rel="nofollow noopener sponsored">View on Amazon →</a>
   </div>
   
