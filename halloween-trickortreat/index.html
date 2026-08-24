@@ -1,0 +1,278 @@
+<title>Trick-or-Treat Bags for Halloween Night</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #f4f0fb;
+    --bg-2: #e4d7f7;
+    --surface: #ffffff;
+    --surface-alt: #faf6ff;
+    --ink: #2b2440;
+    --ink-muted: #786a9c;
+    --accent: #362c56;
+    --accent-soft: #6b5a99;
+    --amber: #e0932e;
+    --amber-soft: #f2b768;
+    --border: #e5daf7;
+    --shadow: 20px 28px 0 rgba(54, 44, 86, 0.12);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #171429;
+    --bg-2: #201a38;
+    --surface: #1e1935;
+    --surface-alt: #241f40;
+    --ink: #ece7fa;
+    --ink-muted: #b0a3d6;
+    --accent: #ece7fa;
+    --accent-soft: #b0a3d6;
+    --amber: #f2ac52;
+    --amber-soft: #f7c98a;
+    --border: #332c56;
+    --shadow: 20px 28px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #171429;
+      --bg-2: #201a38;
+      --surface: #1e1935;
+      --surface-alt: #241f40;
+      --ink: #ece7fa;
+      --ink-muted: #b0a3d6;
+      --accent: #ece7fa;
+      --accent-soft: #b0a3d6;
+      --amber: #f2ac52;
+      --amber-soft: #f7c98a;
+      --border: #332c56;
+      --shadow: 20px 28px 0 rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+
+  .hero {
+    position: relative;
+    margin: 0 -20px 40px;
+    padding: 56px 20px 48px;
+    background:
+      radial-gradient(circle at 15% 15%, rgba(224, 147, 46, 0.18) 0, transparent 45%),
+      radial-gradient(circle at 88% 85%, rgba(54, 44, 86, 0.14) 0, transparent 50%),
+      linear-gradient(180deg, var(--bg-2), var(--bg));
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .motif {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 20px;
+    animation: glow 3s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .motif { animation: none; }
+  }
+
+  @keyframes glow {
+    0%, 100% { opacity: 1; }
+    45% { opacity: 0.8; }
+    50% { opacity: 1; }
+    75% { opacity: 0.88; }
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-size: clamp(28px, 6vw, 38px);
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-width: 46ch;
+    margin: 0 auto;
+    text-wrap: balance;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 28px 26px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .item:nth-child(2) { background: var(--surface-alt); }
+
+  .item:hover {
+    transform: translateY(-3px);
+    box-shadow: 24px 34px 0 rgba(224, 147, 46, 0.16);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .item { transition: none; }
+    .item:hover { transform: none; }
+  }
+
+  .item-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .item h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .item p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin: 0 0 20px;
+    max-width: 60ch;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 6px 0 var(--amber);
+  }
+
+  .cta:hover { transform: translateY(-2px); }
+  .cta:active { transform: translateY(1px); box-shadow: 0 3px 0 var(--amber); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+    .cta:hover, .cta:active { transform: none; }
+  }
+
+  .cta svg { width: 14px; height: 14px; }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .disclosure {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+</style>
+
+<div class="page">
+  <div class="hero">
+    <svg class="motif" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <path d="M28 42 Q22 40 24 34 Q30 22 50 22 Q70 22 76 34 Q78 40 72 42 Z" fill="var(--accent-soft)" opacity="0.5"/>
+      <path d="M26 44 L30 84 Q30 88 34 88 L66 88 Q70 88 70 84 L74 44 Z" fill="var(--amber-soft)"/>
+      <path d="M26 44 L30 84 Q30 88 34 88 L50 88 L50 44 Z" fill="var(--amber)" opacity="0.55"/>
+      <circle cx="50" cy="60" r="10" fill="var(--surface)" opacity="0.9"/>
+      <circle cx="50" cy="60" r="5" fill="var(--amber)"/>
+    </svg>
+    <span class="eyebrow">The Halloween Night Edit</span>
+    <h1>Trick-or-Treat Bags for Every Kind of Halloween Night</h1>
+    <p class="lede">From pastel kawaii totes to name-personalized bags and glow-in-the-dark buckets — shop the exact trick-or-treat bags styled in every pin.</p>
+  </div>
+
+  <div class="items">
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M14 16 Q14 8 22 8 Q30 8 30 16" stroke="var(--accent-soft)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+        <rect x="9" y="16" width="26" height="22" rx="4" fill="var(--amber-soft)"/>
+        <circle cx="18" cy="27" r="1.6" fill="var(--surface)"/>
+        <circle cx="26" cy="27" r="1.6" fill="var(--surface)"/>
+        <path d="M18 32 Q22 35 26 32" stroke="var(--surface)" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      </svg>
+      <h2>Kawaii Ghost Trick-or-Treat Tote</h2>
+      <p>A soft pastel canvas tote with an adorable ghost print — roomy enough for a night of candy collecting, cute enough to reuse all year.</p>
+      <a class="cta" href="https://amzn.to/4gtqMhz" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M14 16 Q14 8 22 8 Q30 8 30 16" stroke="var(--accent-soft)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+        <rect x="9" y="16" width="26" height="22" rx="4" fill="var(--accent-soft)" opacity="0.35"/>
+        <path d="M15 24 L19 30 M19 24 L15 30" stroke="var(--amber)" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M23 30 L23 24 L27 24 Q29 24 29 26.5 Q29 29 27 29 L23 27" stroke="var(--amber)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      <h2>Personalized Halloween Tote</h2>
+      <p>Add their name to a Halloween tote in your choice of pumpkin, witch, or ghost design — a keepsake gift that doubles as a candy bag.</p>
+      <a class="cta" href="https://amzn.to/4x8fTI3" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M14 14 Q14 7 22 7 Q30 7 30 14" stroke="var(--accent-soft)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+        <rect x="9" y="14" width="26" height="24" rx="4" fill="var(--surface-alt)" stroke="var(--amber)" stroke-width="1.6"/>
+        <circle cx="22" cy="26" r="6" fill="var(--amber)" opacity="0.9"/>
+        <path d="M22 16 L22 20 M13 26 L17 26 M27 26 L31 26" stroke="var(--amber-soft)" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <h2>LED Light-Up Trick-or-Treat Bag</h2>
+      <p>Battery-powered LED lights keep little trick-or-treaters glowing and easy to spot on dark porches and sidewalks.</p>
+      <a class="cta" href="https://amzn.to/4zyDqDR" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+  </div>
+
+  <footer>
+    <p class="disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+  </footer>
+</div>

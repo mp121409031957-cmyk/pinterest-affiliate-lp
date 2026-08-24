@@ -1,0 +1,258 @@
+<title>Japanese Kitchen Knives</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #f0efec;
+    --bg-2: #dedad2;
+    --surface: #ffffff;
+    --surface-alt: #f7f5f0;
+    --ink: #201e1c;
+    --ink-muted: #6b665e;
+    --accent: #26221d;
+    --accent-soft: #55504a;
+    --steel: #8b6b3f;
+    --steel-soft: #b8945e;
+    --border: #e2ddd2;
+    --shadow: 20px 28px 0 rgba(139, 107, 63, 0.14);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #171512;
+    --bg-2: #201d19;
+    --surface: #1f1c18;
+    --surface-alt: #262220;
+    --ink: #ede9e2;
+    --ink-muted: #b3a998;
+    --accent: #ede9e2;
+    --accent-soft: #b3a998;
+    --steel: #d3a869;
+    --steel-soft: #e0bd8a;
+    --border: #37312a;
+    --shadow: 20px 28px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #171512;
+      --bg-2: #201d19;
+      --surface: #1f1c18;
+      --surface-alt: #262220;
+      --ink: #ede9e2;
+      --ink-muted: #b3a998;
+      --accent: #ede9e2;
+      --accent-soft: #b3a998;
+      --steel: #d3a869;
+      --steel-soft: #e0bd8a;
+      --border: #37312a;
+      --shadow: 20px 28px 0 rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+
+  .hero {
+    position: relative;
+    margin: 0 -20px 40px;
+    padding: 56px 20px 48px;
+    background:
+      radial-gradient(circle at 15% 15%, rgba(139, 107, 63, 0.18) 0, transparent 45%),
+      radial-gradient(circle at 88% 85%, rgba(38, 34, 29, 0.1) 0, transparent 50%),
+      linear-gradient(180deg, var(--bg-2), var(--bg));
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .motif {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--steel);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-size: clamp(28px, 6vw, 38px);
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-width: 46ch;
+    margin: 0 auto;
+    text-wrap: balance;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 28px 26px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .item:nth-child(2) { background: var(--surface-alt); }
+
+  .item:hover {
+    transform: translateY(-3px);
+    box-shadow: 24px 34px 0 rgba(139, 107, 63, 0.18);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .item { transition: none; }
+    .item:hover { transform: none; }
+  }
+
+  .item-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .item h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .item p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin: 0 0 20px;
+    max-width: 60ch;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 6px 0 var(--steel);
+  }
+
+  .cta:hover { transform: translateY(-2px); }
+  .cta:active { transform: translateY(1px); box-shadow: 0 3px 0 var(--steel); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+    .cta:hover, .cta:active { transform: none; }
+  }
+
+  .cta svg { width: 14px; height: 14px; }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .disclosure {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+</style>
+
+<div class="page">
+  <div class="hero">
+    <svg class="motif" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <path d="M20 50 L62 34 Q70 31 73 39 L75 44 Q78 52 70 55 L28 71 Z" fill="var(--steel-soft)"/>
+      <rect x="20" y="60" width="26" height="10" rx="3" fill="var(--accent-soft)" transform="rotate(-20 33 65)"/>
+      <path d="M62 34 L73 39" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <span class="eyebrow">The Kitchen Craft Edit</span>
+    <h1>Japanese Kitchen Knives</h1>
+    <p class="lede">Sharp, beautifully balanced Japanese-style blades — shop the exact knife set, Santoku, and Nakiri styled in every pin for effortless everyday cooking.</p>
+  </div>
+
+  <div class="items">
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="8" y="10" width="10" height="24" rx="2" fill="var(--accent-soft)"/>
+        <rect x="20" y="10" width="10" height="24" rx="2" fill="var(--steel-soft)"/>
+        <rect x="32" y="10" width="6" height="24" rx="2" fill="var(--accent-soft)"/>
+      </svg>
+      <h2>Japanese Knife Set with Magnetic Block</h2>
+      <p>A gift-boxed set of Japanese-style stainless steel knives on a magnetic wood block — a polished everyday kitchen upgrade or a standout wedding and housewarming gift.</p>
+      <a class="cta" href="https://amzn.to/4gteHcl" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M8 24 L30 15 Q35 13 37 18 L38 20 Q40 25 35 27 L13 36 Z" fill="var(--steel-soft)"/>
+        <rect x="8" y="30" width="12" height="6" rx="2" fill="var(--accent-soft)" transform="rotate(-18 14 33)"/>
+      </svg>
+      <h2>Santoku Chef Knife</h2>
+      <p>The all-purpose Japanese knife home cooks reach for daily — razor-sharp high-carbon steel with a comfortable pakkawood handle, ideal for meat, fish, and vegetables alike.</p>
+      <a class="cta" href="https://amzn.to/4wuwu7N" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="8" y="16" width="24" height="12" rx="1" fill="var(--steel-soft)"/>
+        <rect x="30" y="18" width="8" height="8" rx="2" fill="var(--accent-soft)"/>
+      </svg>
+      <h2>Nakiri Vegetable Knife</h2>
+      <p>A rectangular Japanese blade built for effortless, clean vegetable prep — chop, dice, and slice with less effort and no crushing.</p>
+      <a class="cta" href="https://amzn.to/4g7XdlT" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+  </div>
+
+  <footer>
+    <p class="disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+  </footer>
+</div>

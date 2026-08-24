@@ -1,0 +1,272 @@
+<title>Bring the Japanese Onsen Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #f4ede3;
+    --bg-2: #e7d8c4;
+    --surface: #ffffff;
+    --surface-alt: #fbf4ea;
+    --ink: #332a20;
+    --ink-muted: #85735e;
+    --accent: #8a9a7e;
+    --accent-soft: #b7c4ac;
+    --gold: #c48a4a;
+    --gold-soft: #e0bd8e;
+    --border: #e6d9c6;
+    --shadow: 20px 28px 0 rgba(138, 154, 126, 0.14);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #211c16;
+    --bg-2: #2a2319;
+    --surface: #29231b;
+    --surface-alt: #332b20;
+    --ink: #f2e9dc;
+    --ink-muted: #c7b49b;
+    --accent: #a3b596;
+    --accent-soft: #c2d0b6;
+    --gold: #dba967;
+    --gold-soft: #ecc793;
+    --border: #453a2b;
+    --shadow: 20px 28px 0 rgba(0, 0, 0, 0.32);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #211c16;
+      --bg-2: #2a2319;
+      --surface: #29231b;
+      --surface-alt: #332b20;
+      --ink: #f2e9dc;
+      --ink-muted: #c7b49b;
+      --accent: #a3b596;
+      --accent-soft: #c2d0b6;
+      --gold: #dba967;
+      --gold-soft: #ecc793;
+      --border: #453a2b;
+      --shadow: 20px 28px 0 rgba(0, 0, 0, 0.32);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+
+  .hero {
+    position: relative;
+    margin: 0 -20px 40px;
+    padding: 56px 20px 48px;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(138, 154, 126, 0.18) 0, transparent 42%),
+      radial-gradient(circle at 88% 8%, rgba(196, 138, 74, 0.18) 0, transparent 45%),
+      linear-gradient(180deg, var(--bg-2), var(--bg));
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .motif {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 20px;
+    animation: steam 4.5s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .motif { animation: none; }
+  }
+
+  @keyframes steam {
+    0%, 100% { transform: translateY(0); opacity: 0.85; }
+    50% { transform: translateY(-6px); opacity: 1; }
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-size: clamp(28px, 6vw, 38px);
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-width: 46ch;
+    margin: 0 auto;
+    text-wrap: balance;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 28px 26px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .item:nth-child(2) { background: var(--surface-alt); }
+
+  .item:hover {
+    transform: translateY(-3px);
+    box-shadow: 24px 34px 0 rgba(138, 154, 126, 0.18);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .item { transition: none; }
+    .item:hover { transform: none; }
+  }
+
+  .item-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .item h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .item p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin: 0 0 20px;
+    max-width: 60ch;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #fbfaf6;
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 6px 0 rgba(74, 90, 62, 0.3);
+  }
+
+  .cta:hover { transform: translateY(-2px); }
+  .cta:active { transform: translateY(1px); box-shadow: 0 3px 0 rgba(74, 90, 62, 0.3); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+    .cta:hover, .cta:active { transform: none; }
+  }
+
+  .cta svg { width: 14px; height: 14px; }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .disclosure {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+</style>
+
+<div class="page">
+  <div class="hero">
+    <svg class="motif" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <ellipse cx="50" cy="70" rx="32" ry="14" fill="var(--accent-soft)" opacity="0.6"/>
+      <path d="M38 55 Q34 42 42 34 Q38 28 44 20" stroke="var(--gold)" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M52 55 Q48 40 56 30 Q52 24 58 16" stroke="var(--gold-soft)" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M64 55 Q62 44 68 36" stroke="var(--gold)" stroke-width="3" stroke-linecap="round" fill="none"/>
+    </svg>
+    <span class="eyebrow">The Onsen Bath Ritual Edit</span>
+    <h1>Bring the Japanese Onsen Home</h1>
+    <p class="lede">Yuzu, hinoki, and cozy cotton — shop the exact pieces styled in every pin to build your own calming Japanese-style bath ritual.</p>
+  </div>
+
+  <div class="items">
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="14" y="16" width="16" height="20" rx="3" fill="var(--gold-soft)"/>
+        <rect x="19" y="9" width="6" height="8" rx="2" fill="var(--gold)"/>
+        <circle cx="22" cy="24" r="2.4" fill="#ffffff" opacity="0.7"/>
+      </svg>
+      <h2>Japanese Yuzu Bath Salts</h2>
+      <p>Bath salts infused with yuzu citrus and olive oil, made in Japan — a fragrant, warming soak that turns an ordinary bath into an onsen-style ritual.</p>
+      <a class="cta" href="https://amzn.to/4bKkE1U" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="10" y="24" width="24" height="6" rx="3" fill="var(--accent-soft)"/>
+        <path d="M14 24 L15 34 Q22 37 29 34 L30 24" stroke="var(--gold)" stroke-width="2" fill="none" stroke-linejoin="round"/>
+        <rect x="16" y="10" width="12" height="4" rx="2" fill="var(--gold-soft)"/>
+        <line x1="22" y1="14" x2="22" y2="24" stroke="var(--gold)" stroke-width="2"/>
+      </svg>
+      <h2>Hinoki Wood Bath Stool &amp; Bucket Set</h2>
+      <p>A handcrafted Japanese hinoki stool and wood bucket, made in Japan — the traditional foundation of an authentic Japanese bathhouse routine.</p>
+      <a class="cta" href="https://amzn.to/3TOYNAo" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M14 10 L14 34 Q14 38 18 38 L26 38 Q30 38 30 34 L30 10 Z" fill="var(--surface-alt)" stroke="var(--accent)" stroke-width="1.6"/>
+        <line x1="22" y1="10" x2="22" y2="38" stroke="var(--accent)" stroke-width="1.4" opacity="0.5"/>
+        <rect x="10" y="8" width="6" height="4" rx="1.4" fill="var(--gold-soft)"/>
+      </svg>
+      <h2>Yukata Kimono Spa Robe</h2>
+      <p>A soft cotton yukata-style robe with obi, inspired by ryokan spa robes — the cozy finishing touch for a Japanese-style self-care night.</p>
+      <a class="cta" href="https://amzn.to/4fRGhzS" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+  </div>
+
+  <footer>
+    <p class="disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+  </footer>
+</div>

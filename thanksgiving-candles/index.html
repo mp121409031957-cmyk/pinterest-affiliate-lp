@@ -1,0 +1,258 @@
+<title>Thanksgiving Candles &amp; Ambiance</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #f4ece0;
+    --bg-2: #e8d7bd;
+    --surface: #fbf6ec;
+    --surface-alt: #f5ecdc;
+    --ink: #2b2015;
+    --ink-muted: #7a6748;
+    --accent: #2b2015;
+    --accent-soft: #6b5334;
+    --amber: #c4791f;
+    --amber-soft: #e0a24f;
+    --border: #e0cca4;
+    --shadow: 20px 28px 0 rgba(196, 121, 31, 0.16);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #1a130c;
+    --bg-2: #241a10;
+    --surface: #221909;
+    --surface-alt: #2b2011;
+    --ink: #f3e6cf;
+    --ink-muted: #cba86e;
+    --accent: #f3e6cf;
+    --accent-soft: #cba86e;
+    --amber: #edac53;
+    --amber-soft: #f2c078;
+    --border: #3c2b15;
+    --shadow: 20px 28px 0 rgba(0, 0, 0, 0.45);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1a130c;
+      --bg-2: #241a10;
+      --surface: #221909;
+      --surface-alt: #2b2011;
+      --ink: #f3e6cf;
+      --ink-muted: #cba86e;
+      --accent: #f3e6cf;
+      --accent-soft: #cba86e;
+      --amber: #edac53;
+      --amber-soft: #f2c078;
+      --border: #3c2b15;
+      --shadow: 20px 28px 0 rgba(0, 0, 0, 0.45);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+
+  .hero {
+    position: relative;
+    margin: 0 -20px 40px;
+    padding: 56px 20px 48px;
+    background:
+      radial-gradient(circle at 15% 15%, rgba(196, 121, 31, 0.18) 0, transparent 45%),
+      radial-gradient(circle at 88% 85%, rgba(43, 32, 21, 0.14) 0, transparent 50%),
+      linear-gradient(180deg, var(--bg-2), var(--bg));
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .motif {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 20px;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-family: Georgia, "Iowan Old Style", Palatino, serif;
+    font-size: clamp(28px, 6vw, 38px);
+    line-height: 1.18;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-width: 46ch;
+    margin: 0 auto;
+    text-wrap: balance;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 28px 26px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .item:nth-child(2) { background: var(--surface-alt); }
+
+  .item:hover {
+    transform: translateY(-3px);
+    box-shadow: 24px 34px 0 rgba(196, 121, 31, 0.2);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .item { transition: none; }
+    .item:hover { transform: none; }
+  }
+
+  .item-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .item h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .item p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin: 0 0 20px;
+    max-width: 60ch;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 6px 0 var(--amber);
+  }
+
+  .cta:hover { transform: translateY(-2px); }
+  .cta:active { transform: translateY(1px); box-shadow: 0 3px 0 var(--amber); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+    .cta:hover, .cta:active { transform: none; }
+  }
+
+  .cta svg { width: 14px; height: 14px; }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .disclosure {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+</style>
+
+<div class="page">
+  <div class="hero">
+    <svg class="motif" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <path d="M50 30 Q42 44 50 54 Q58 44 50 30 Z" fill="var(--amber-soft)"/>
+      <rect x="42" y="54" width="16" height="24" rx="4" fill="var(--accent-soft)" opacity="0.7"/>
+      <ellipse cx="50" cy="80" rx="18" ry="4" fill="var(--amber)" opacity="0.4"/>
+    </svg>
+    <span class="eyebrow">The Candlelit Table Edit</span>
+    <h1>Thanksgiving Candles &amp; Ambiance</h1>
+    <p class="lede">Amber candle holders, a fall-scented soy candle, and glass hurricane lanterns — shop the exact glow styled in every pin for a warm, candlelit Thanksgiving table.</p>
+  </div>
+
+  <div class="items">
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M22 8 Q17 18 22 26 Q27 18 22 8 Z" fill="var(--amber-soft)"/>
+        <rect x="17" y="26" width="10" height="12" rx="2" fill="var(--accent-soft)"/>
+      </svg>
+      <h2>Amber Glass Candlestick Holders</h2>
+      <p>A set of 4 ribbed amber glass candle holders — warm glowing candlelight that instantly makes the table feel cozy and inviting.</p>
+      <a class="cta" href="https://amzn.to/4xJkrEJ" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="12" y="14" width="20" height="24" rx="3" fill="var(--accent-soft)"/>
+        <rect x="14" y="10" width="16" height="6" rx="2" fill="var(--surface)" stroke="var(--amber)" stroke-width="1.4"/>
+      </svg>
+      <h2>Fall Scented Soy Candle</h2>
+      <p>A warm pumpkin chai scented soy candle in an amber glass jar — the perfect cozy scent for your gathering, and a lovely host gift too.</p>
+      <a class="cta" href="https://amzn.to/4xFz8bR" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="14" y="10" width="16" height="26" rx="8" fill="none" stroke="var(--amber)" stroke-width="1.6"/>
+        <ellipse cx="22" cy="30" rx="5" ry="7" fill="var(--amber-soft)"/>
+      </svg>
+      <h2>Glass Hurricane Candle Lanterns</h2>
+      <p>A set of clear glass hurricane candle holders in three heights — tall, elegant, and wind-safe for an effortless centerpiece.</p>
+      <a class="cta" href="https://amzn.to/45tbZgM" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+  </div>
+
+  <footer>
+    <p class="disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+  </footer>
+</div>

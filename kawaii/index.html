@@ -1,0 +1,302 @@
+<title>Everyday Kawaii Edit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #fff2f6;
+    --bg-2: #ffe2ec;
+    --surface: #ffffff;
+    --surface-alt: #fdeef7;
+    --ink: #4a2f42;
+    --ink-muted: #9b7f92;
+    --accent: #ff6f9c;
+    --accent-soft: #ffb3cb;
+    --mint: #4fc9ab;
+    --mint-soft: #a8e6d4;
+    --lavender: #a78bd6;
+    --border: #ffd7e4;
+    --shadow: 20px 28px 0 rgba(255, 111, 156, 0.10);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #241621;
+    --bg-2: #2e1c2a;
+    --surface: #2b1a28;
+    --surface-alt: #362133;
+    --ink: #fbe8f2;
+    --ink-muted: #cfa9c1;
+    --accent: #ff8fb0;
+    --accent-soft: #ffb8cd;
+    --mint: #6fdcbe;
+    --mint-soft: #9beccf;
+    --lavender: #c3aae8;
+    --border: #4a2e44;
+    --shadow: 20px 28px 0 rgba(0, 0, 0, 0.32);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #241621;
+      --bg-2: #2e1c2a;
+      --surface: #2b1a28;
+      --surface-alt: #362133;
+      --ink: #fbe8f2;
+      --ink-muted: #cfa9c1;
+      --accent: #ff8fb0;
+      --accent-soft: #ffb8cd;
+      --mint: #6fdcbe;
+      --mint-soft: #9beccf;
+      --lavender: #c3aae8;
+      --border: #4a2e44;
+      --shadow: 20px 28px 0 rgba(0, 0, 0, 0.32);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+
+  .hero {
+    position: relative;
+    margin: 0 -20px 40px;
+    padding: 56px 20px 48px;
+    background:
+      radial-gradient(circle at 12% 16%, rgba(255, 111, 156, 0.18) 0, transparent 42%),
+      radial-gradient(circle at 88% 10%, rgba(79, 201, 171, 0.16) 0, transparent 45%),
+      radial-gradient(circle at 50% 95%, rgba(167, 139, 214, 0.14) 0, transparent 50%),
+      linear-gradient(180deg, var(--bg-2), var(--bg));
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .motif {
+    width: 88px;
+    height: 88px;
+    margin: 0 auto 18px;
+    animation: bounce 4s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .motif { animation: none; }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-7px) rotate(2deg); }
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-size: clamp(28px, 6vw, 39px);
+    line-height: 1.16;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-width: 46ch;
+    margin: 0 auto;
+    text-wrap: balance;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 28px 26px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .item:nth-child(2) { background: var(--surface-alt); }
+
+  .item:hover {
+    transform: translateY(-3px) rotate(-0.4deg);
+    box-shadow: 26px 36px 0 rgba(255, 111, 156, 0.14);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .item { transition: none; }
+    .item:hover { transform: none; }
+  }
+
+  .item-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .item h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .item p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin: 0 0 20px;
+    max-width: 60ch;
+  }
+
+  .fit-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    color: var(--mint);
+    background: color-mix(in srgb, var(--mint) 16%, transparent);
+    padding: 4px 11px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+
+  .item:nth-child(3) .fit-tag {
+    color: var(--lavender);
+    background: color-mix(in srgb, var(--lavender) 18%, transparent);
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #fff5f8;
+    font-size: 14.5px;
+    font-weight: 800;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 6px 0 rgba(191, 60, 104, 0.28);
+  }
+
+  .cta:hover { transform: translateY(-2px); }
+  .cta:active { transform: translateY(1px); box-shadow: 0 3px 0 rgba(191, 60, 104, 0.28); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+    .cta:hover, .cta:active { transform: none; }
+  }
+
+  .cta svg { width: 14px; height: 14px; }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .disclosure {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+</style>
+
+<div class="page">
+  <div class="hero">
+    <svg class="motif" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <circle cx="50" cy="56" r="26" fill="var(--accent-soft)"/>
+      <circle cx="34" cy="34" r="10" fill="var(--accent-soft)"/>
+      <circle cx="66" cy="34" r="10" fill="var(--accent-soft)"/>
+      <circle cx="41" cy="54" r="3.4" fill="var(--ink)"/>
+      <circle cx="59" cy="54" r="3.4" fill="var(--ink)"/>
+      <path d="M43 64 Q50 70 57 64" stroke="var(--ink)" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+      <circle cx="33" cy="62" r="4" fill="var(--accent)" opacity="0.55"/>
+      <circle cx="67" cy="62" r="4" fill="var(--accent)" opacity="0.55"/>
+    </svg>
+    <span class="eyebrow">The Everyday Kawaii Edit</span>
+    <h1>Everyday Kawaii: Cute Essentials Straight From Japan</h1>
+    <p class="lede">Fluffy, pastel, and endlessly cute — shop the exact pieces styled in every pin to bring a little Japanese kawaii joy into your day.</p>
+  </div>
+
+  <div class="items">
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="6" y="10" width="14" height="24" rx="3" fill="var(--mint-soft)"/>
+        <rect x="24" y="14" width="14" height="16" rx="3" fill="var(--accent-soft)" opacity="0.85"/>
+        <circle cx="13" cy="22" r="2.4" fill="var(--ink)" opacity="0.5"/>
+      </svg>
+      <span class="fit-tag">10 tape rolls + stickers + memo pad</span>
+      <h2>Kawaii Washi Tape &amp; Sticker Set</h2>
+      <p>Ten rolls of pastel washi tape, sticker sheets, and a memo pad featuring cute animal designs — everything you need to turn plain notes and planners into something worth smiling at.</p>
+      <a class="cta" href="https://amzn.to/3S0dwrm" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <circle cx="17" cy="24" r="10" fill="var(--accent-soft)"/>
+        <circle cx="30" cy="20" r="8" fill="var(--mint-soft)"/>
+        <path d="M22 10 L22 4" stroke="var(--ink-muted)" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="22" cy="6" r="2.6" fill="none" stroke="var(--ink-muted)" stroke-width="1.6"/>
+      </svg>
+      <span class="fit-tag">Fluffy pastel plush charms</span>
+      <h2>Fluffy Plush Keychains</h2>
+      <p>Soft pastel plush charms that clip onto any bag, backpack, or purse strap — an instant pop of cute for your everyday carry.</p>
+      <a class="cta" href="https://amzn.to/4xv4qlB" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="8" y="8" width="28" height="28" rx="5" fill="var(--lavender)" opacity="0.35"/>
+        <circle cx="18" cy="18" r="4.4" fill="var(--lavender)"/>
+        <circle cx="30" cy="18" r="3.4" fill="var(--accent)" opacity="0.7"/>
+        <circle cx="18" cy="29" r="3.4" fill="var(--mint)" opacity="0.7"/>
+        <circle cx="29" cy="29" r="4.4" fill="var(--lavender)"/>
+      </svg>
+      <span class="fit-tag">Genuinely raised 3D texture</span>
+      <h2>Puffy Kawaii Animal Stickers</h2>
+      <p>Genuinely puffy, raised 3D stickers covered in tiny kawaii animals — the tactile sticker trend everyone in Japan is obsessed with right now, perfect for phones, notebooks, and water bottles.</p>
+      <a class="cta" href="https://amzn.to/4q83dy1" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+  </div>
+
+  <footer>
+    <p class="disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+  </footer>
+</div>

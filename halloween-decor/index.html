@@ -1,0 +1,290 @@
+<title>Pastel Halloween Decor Edit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #fcf1f0;
+    --bg-2: #f6e0dd;
+    --surface: #ffffff;
+    --surface-alt: #faece9;
+    --ink: #4a3540;
+    --ink-muted: #96828b;
+    --accent: #c98a9a;
+    --accent-soft: #e0adba;
+    --sage: #7f9a76;
+    --sage-soft: #aec3a3;
+    --border: #f0dad6;
+    --shadow: 24px 34px 0 rgba(201, 138, 154, 0.12);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #241923;
+    --bg-2: #2e202b;
+    --surface: #2c1f2a;
+    --surface-alt: #382a35;
+    --ink: #f6e9f0;
+    --ink-muted: #c3adba;
+    --accent: #e6a4b5;
+    --accent-soft: #f0c2cd;
+    --sage: #a3c096;
+    --sage-soft: #c1d6b6;
+    --border: #4a3946;
+    --shadow: 24px 34px 0 rgba(0, 0, 0, 0.32);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #241923;
+      --bg-2: #2e202b;
+      --surface: #2c1f2a;
+      --surface-alt: #382a35;
+      --ink: #f6e9f0;
+      --ink-muted: #c3adba;
+      --accent: #e6a4b5;
+      --accent-soft: #f0c2cd;
+      --sage: #a3c096;
+      --sage-soft: #c1d6b6;
+      --border: #4a3946;
+      --shadow: 24px 34px 0 rgba(0, 0, 0, 0.32);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+
+  .hero {
+    position: relative;
+    margin: 0 -20px 40px;
+    padding: 56px 20px 48px;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(201,138,154,0.18) 0, transparent 42%),
+      radial-gradient(circle at 88% 8%, rgba(127,154,118,0.16) 0, transparent 45%),
+      radial-gradient(circle at 50% 95%, rgba(201,138,154,0.10) 0, transparent 50%),
+      linear-gradient(180deg, var(--bg-2), var(--bg));
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .motif {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 20px;
+    animation: bob 4.5s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .motif { animation: none; }
+  }
+
+  @keyframes bob {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-6px) rotate(-3deg); }
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-size: clamp(28px, 6vw, 38px);
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-width: 46ch;
+    margin: 0 auto;
+    text-wrap: balance;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 28px 26px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .item:nth-child(2) { background: var(--surface-alt); }
+
+  .item:hover {
+    transform: translateY(-3px);
+    box-shadow: 28px 40px 0 rgba(201, 138, 154, 0.16);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .item { transition: none; }
+    .item:hover { transform: none; }
+  }
+
+  .item-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .item h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .item p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin: 0 0 20px;
+    max-width: 60ch;
+  }
+
+  .fit-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--sage);
+    background: color-mix(in srgb, var(--sage) 16%, transparent);
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #fff8f7;
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 6px 0 rgba(122, 65, 84, 0.22);
+  }
+
+  .cta:hover { transform: translateY(-2px); }
+  .cta:active { transform: translateY(1px); box-shadow: 0 3px 0 rgba(122, 65, 84, 0.22); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+    .cta:hover, .cta:active { transform: none; }
+  }
+
+  .cta svg { width: 14px; height: 14px; }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .disclosure {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+</style>
+
+<div class="page">
+  <div class="hero">
+    <svg class="motif" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <path d="M50 30 C30 30 22 46 22 60 C22 78 34 86 50 86 C66 86 78 78 78 60 C78 46 70 30 50 30 Z" fill="var(--accent-soft)"/>
+      <path d="M22 60 C22 60 36 66 50 66 C64 66 78 60 78 60" stroke="var(--accent)" stroke-width="2.4" fill="none" opacity="0.5"/>
+      <rect x="47" y="16" width="6" height="16" rx="3" fill="var(--sage)"/>
+      <circle cx="40" cy="58" r="3" fill="var(--surface)"/>
+      <circle cx="60" cy="58" r="3" fill="var(--surface)"/>
+      <path d="M42 70 Q50 75 58 70" stroke="var(--surface)" stroke-width="3" stroke-linecap="round" fill="none"/>
+    </svg>
+    <span class="eyebrow">The Pastel Halloween Decor Edit</span>
+    <h1>A Halloween Porch That's More Adorable Than Spooky</h1>
+    <p class="lede">Soft pumpkins, glowing lights, and felt ghosts — shop the exact pieces styled in every pin for a pastel, kawaii take on Halloween decor.</p>
+  </div>
+
+  <div class="items">
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M22 14 C13 14 8 22 8 30 C8 37 14 40 22 40 C30 40 36 37 36 30 C36 22 31 14 22 14 Z" fill="var(--accent)"/>
+        <rect x="19.5" y="6" width="5" height="9" rx="2.5" fill="var(--sage)"/>
+      </svg>
+      <span class="fit-tag">16-piece velvet pumpkins</span>
+      <h2>Pastel Velvet Pumpkin Set</h2>
+      <p>Sixteen artificial velvet pumpkins in blush, coral, peach, and cream — the exact soft color mix used to style porch railings, garlands, and steps for a whimsical, not-spooky Halloween look.</p>
+      <a class="cta" href="https://amzn.to/45KzphD" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M6 30 Q22 14 38 30" stroke="var(--accent)" stroke-width="2" fill="none"/>
+        <circle cx="6" cy="30" r="3.4" fill="var(--sage)"/>
+        <circle cx="17" cy="20.5" r="3.4" fill="var(--accent-soft)"/>
+        <circle cx="27" cy="20.5" r="3.4" fill="var(--sage-soft)"/>
+        <circle cx="38" cy="30" r="3.4" fill="var(--accent-soft)"/>
+      </svg>
+      <span class="fit-tag">20ft, 8 lighting modes</span>
+      <h2>Pumpkin LED String Lights</h2>
+      <p>Thirty warm-glow pumpkin, ghost, and bat LEDs strung along 20 feet of wire, with a built-in timer and 8 lighting modes — the cozy dusk glow that makes a railing or window frame feel instantly inviting.</p>
+      <a class="cta" href="https://amzn.to/3SfgMiR" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M22 8 C14 8 10 15 10 22 L10 32 L14 28 L18 32 L22 28 L26 32 L30 28 L34 32 L34 22 C34 15 30 8 22 8 Z" fill="var(--accent-soft)"/>
+        <circle cx="18" cy="21" r="2" fill="var(--ink)"/>
+        <circle cx="26" cy="21" r="2" fill="var(--ink)"/>
+      </svg>
+      <span class="fit-tag">4-piece sparkly ghost banner</span>
+      <h2>Pastel Ghost Garland</h2>
+      <p>A pre-strung banner of soft pink and white ghosts with a touch of sparkle, ready to drape along a mantel or shelf for the cutest, most huggable Halloween decor in the house.</p>
+      <a class="cta" href="https://amzn.to/4xlqEX5" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+  </div>
+
+  <footer>
+    <p class="disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+  </footer>
+</div>

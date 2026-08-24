@@ -1,0 +1,271 @@
+<title>Furoshiki Cloths for Wrapping, Carrying, and Everything In Between</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #f5efe0;
+    --bg-2: #e9dabc;
+    --surface: #fffdf7;
+    --surface-alt: #faf2e0;
+    --ink: #2b2a24;
+    --ink-muted: #8a8069;
+    --accent: #2f4468;
+    --accent-soft: #5c7196;
+    --sage: #7c8c6a;
+    --sage-soft: #a6b494;
+    --border: #e3d5b3;
+    --shadow: 20px 28px 0 rgba(47, 68, 104, 0.12);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #17140f;
+    --bg-2: #211c14;
+    --surface: #201b14;
+    --surface-alt: #262019;
+    --ink: #f0e9d8;
+    --ink-muted: #baac8c;
+    --accent: #cddaf0;
+    --accent-soft: #9fb4d8;
+    --sage: #b7c7a2;
+    --sage-soft: #c9d6b8;
+    --border: #3a3122;
+    --shadow: 20px 28px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #17140f;
+      --bg-2: #211c14;
+      --surface: #201b14;
+      --surface-alt: #262019;
+      --ink: #f0e9d8;
+      --ink-muted: #baac8c;
+      --accent: #cddaf0;
+      --accent-soft: #9fb4d8;
+      --sage: #b7c7a2;
+      --sage-soft: #c9d6b8;
+      --border: #3a3122;
+      --shadow: 20px 28px 0 rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+
+  .hero {
+    position: relative;
+    margin: 0 -20px 40px;
+    padding: 56px 20px 48px;
+    background:
+      radial-gradient(circle at 15% 15%, rgba(47, 68, 104, 0.14) 0, transparent 45%),
+      radial-gradient(circle at 88% 85%, rgba(124, 140, 106, 0.16) 0, transparent 50%),
+      linear-gradient(180deg, var(--bg-2), var(--bg));
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .motif {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    animation: settle 4s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .motif { animation: none; }
+  }
+
+  @keyframes settle {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(2deg); }
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-size: clamp(26px, 5.6vw, 36px);
+    line-height: 1.18;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-width: 46ch;
+    margin: 0 auto;
+    text-wrap: balance;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 28px 26px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .item:nth-child(2) { background: var(--surface-alt); }
+
+  .item:hover {
+    transform: translateY(-3px);
+    box-shadow: 24px 34px 0 rgba(124, 140, 106, 0.16);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .item { transition: none; }
+    .item:hover { transform: none; }
+  }
+
+  .item-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .item h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .item p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin: 0 0 20px;
+    max-width: 60ch;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 6px 0 var(--sage);
+  }
+
+  .cta:hover { transform: translateY(-2px); }
+  .cta:active { transform: translateY(1px); box-shadow: 0 3px 0 var(--sage); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+    .cta:hover, .cta:active { transform: none; }
+  }
+
+  .cta svg { width: 14px; height: 14px; }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .disclosure {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+</style>
+
+<div class="page">
+  <div class="hero">
+    <svg class="motif" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <path d="M50 20 L78 46 L64 78 L36 78 L22 46 Z" fill="var(--accent-soft)" opacity="0.35"/>
+      <path d="M50 20 L22 46 L36 78 L50 62 Z" fill="var(--accent)" opacity="0.7"/>
+      <path d="M50 20 L78 46 L64 78 L50 62 Z" fill="var(--sage)" opacity="0.6"/>
+      <circle cx="50" cy="46" r="7" fill="var(--surface)"/>
+      <path d="M46 46 Q50 40 54 46 Q50 52 46 46 Z" fill="var(--accent)"/>
+    </svg>
+    <span class="eyebrow">The Zero-Waste Wrap Edit</span>
+    <h1>Furoshiki Cloths for Wrapping, Carrying, and Everything In Between</h1>
+    <p class="lede">From gift wraps to reusable totes — shop the exact Japanese furoshiki cloths styled in every pin, zero-waste and reusable for years.</p>
+  </div>
+
+  <div class="items">
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="10" y="10" width="24" height="18" rx="2" fill="var(--sage-soft)"/>
+        <path d="M14 10 L22 4 L30 10" stroke="var(--accent-soft)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="22" cy="10" r="2.4" fill="var(--accent)"/>
+      </svg>
+      <h2>Furoshiki Gift Wrapping Cloth</h2>
+      <p>A beautifully patterned single furoshiki cloth — wrap a gift in the traditional Japanese style, no tape or paper needed.</p>
+      <a class="cta" href="https://amzn.to/4g8JR7E" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="7" y="16" width="14" height="14" rx="2" fill="var(--accent-soft)" opacity="0.55"/>
+        <rect x="13" y="12" width="14" height="14" rx="2" fill="var(--sage-soft)" opacity="0.75"/>
+        <rect x="19" y="8" width="14" height="14" rx="2" fill="var(--accent)" opacity="0.85"/>
+      </svg>
+      <h2>4-Season Furoshiki Set</h2>
+      <p>Four seasonal patterns in one set, so you always have the right cloth on hand for any gift or occasion.</p>
+      <a class="cta" href="https://amzn.to/4gtlCCm" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M14 16 Q14 9 22 9 Q30 9 30 16" stroke="var(--accent-soft)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+        <path d="M11 16 L15 32 Q16 35 19 35 L25 35 Q28 35 29 32 L33 16 Z" fill="var(--sage-soft)"/>
+      </svg>
+      <h2>Furoshiki Bag & Wrap in One</h2>
+      <p>Tie it into a handled tote in seconds — a large-format furoshiki that doubles as a reusable everyday bag.</p>
+      <a class="cta" href="https://amzn.to/4fWcINv" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+  </div>
+
+  <footer>
+    <p class="disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+  </footer>
+</div>

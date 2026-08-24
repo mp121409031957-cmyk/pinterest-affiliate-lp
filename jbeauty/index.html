@@ -1,0 +1,271 @@
+<title>Your Glass Skin Routine, Made in Japan</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #faf1ee;
+    --bg-2: #f3ded6;
+    --surface: #ffffff;
+    --surface-alt: #fdf5f2;
+    --ink: #3a2b28;
+    --ink-muted: #8c716a;
+    --accent: #c17b86;
+    --accent-soft: #e3aab0;
+    --gold: #c9a366;
+    --gold-soft: #e6d3ac;
+    --border: #f0dcd5;
+    --shadow: 20px 28px 0 rgba(193, 123, 134, 0.12);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #241b19;
+    --bg-2: #2e211e;
+    --surface: #2b201d;
+    --surface-alt: #362724;
+    --ink: #f6e8e4;
+    --ink-muted: #cba9a2;
+    --accent: #e79aa4;
+    --accent-soft: #f0bcc2;
+    --gold: #e0bd7e;
+    --gold-soft: #edd6a6;
+    --border: #4a3733;
+    --shadow: 20px 28px 0 rgba(0, 0, 0, 0.32);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #241b19;
+      --bg-2: #2e211e;
+      --surface: #2b201d;
+      --surface-alt: #362724;
+      --ink: #f6e8e4;
+      --ink-muted: #cba9a2;
+      --accent: #e79aa4;
+      --accent-soft: #f0bcc2;
+      --gold: #e0bd7e;
+      --gold-soft: #edd6a6;
+      --border: #4a3733;
+      --shadow: 20px 28px 0 rgba(0, 0, 0, 0.32);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+
+  .hero {
+    position: relative;
+    margin: 0 -20px 40px;
+    padding: 56px 20px 48px;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(193, 123, 134, 0.16) 0, transparent 42%),
+      radial-gradient(circle at 88% 8%, rgba(201, 163, 102, 0.16) 0, transparent 45%),
+      linear-gradient(180deg, var(--bg-2), var(--bg));
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .motif {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 20px;
+    animation: shimmer 4.5s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .motif { animation: none; }
+  }
+
+  @keyframes shimmer {
+    0%, 100% { opacity: 0.75; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-size: clamp(28px, 6vw, 38px);
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-width: 46ch;
+    margin: 0 auto;
+    text-wrap: balance;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 28px 26px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .item:nth-child(2) { background: var(--surface-alt); }
+
+  .item:hover {
+    transform: translateY(-3px);
+    box-shadow: 24px 34px 0 rgba(193, 123, 134, 0.16);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .item { transition: none; }
+    .item:hover { transform: none; }
+  }
+
+  .item-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .item h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .item p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin: 0 0 20px;
+    max-width: 60ch;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #fdf1ec;
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 6px 0 rgba(139, 68, 78, 0.28);
+  }
+
+  .cta:hover { transform: translateY(-2px); }
+  .cta:active { transform: translateY(1px); box-shadow: 0 3px 0 rgba(139, 68, 78, 0.28); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+    .cta:hover, .cta:active { transform: none; }
+  }
+
+  .cta svg { width: 14px; height: 14px; }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .disclosure {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+</style>
+
+<div class="page">
+  <div class="hero">
+    <svg class="motif" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <circle cx="50" cy="50" r="30" fill="var(--accent-soft)" opacity="0.5"/>
+      <circle cx="50" cy="50" r="20" fill="var(--gold-soft)" opacity="0.7"/>
+      <circle cx="42" cy="42" r="5" fill="#ffffff" opacity="0.9"/>
+    </svg>
+    <span class="eyebrow">The J-Beauty Edit</span>
+    <h1>Your Glass Skin Routine, Made in Japan</h1>
+    <p class="lede">Rice, sake, and gentle Japanese formulas — shop the exact skincare staples styled in every pin to build your own dewy, glass-skin routine.</p>
+  </div>
+
+  <div class="items">
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="9" y="8" width="26" height="30" rx="10" fill="var(--accent-soft)"/>
+        <circle cx="16" cy="18" r="1.6" fill="var(--ink)"/>
+        <circle cx="28" cy="18" r="1.6" fill="var(--ink)"/>
+        <path d="M15 27 Q22 32 29 27" stroke="var(--ink)" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+      </svg>
+      <h2>Keana Nadeshiko Rice Sheet Mask</h2>
+      <p>A cult-favorite Japanese rice sheet mask soaked in rice-derived essence — a weekly ritual for softer, more hydrated skin, made in Japan.</p>
+      <a class="cta" href="https://amzn.to/4q8S7cn" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="15" y="10" width="14" height="24" rx="4" fill="var(--gold-soft)"/>
+        <rect x="18" y="4" width="8" height="8" rx="2" fill="var(--gold)"/>
+        <line x1="22" y1="12" x2="22" y2="30" stroke="#ffffff" stroke-width="1.4" opacity="0.6"/>
+      </svg>
+      <h2>Shinbi Beauty Japanese Rice Water Toner</h2>
+      <p>A lightweight toner blending rice water, sake extract, and hyaluronic acid — the first step for dewy, balanced glass skin.</p>
+      <a class="cta" href="https://amzn.to/3S3fs2j" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <ellipse cx="22" cy="30" rx="13" ry="8" fill="var(--surface-alt)" stroke="var(--accent)" stroke-width="1.6"/>
+        <circle cx="17" cy="27" r="4.5" fill="#ffffff" stroke="var(--border)" stroke-width="1.2"/>
+        <circle cx="27" cy="24" r="5.5" fill="#ffffff" stroke="var(--border)" stroke-width="1.2"/>
+      </svg>
+      <h2>ILEM Japan Gentle Powder Cleanser</h2>
+      <p>A grain-to-cloud foaming cleanser with rice bran and yuzu extract — a gentle, non-stripping daily wash for a soft, glowing finish.</p>
+      <a class="cta" href="https://amzn.to/4qb3bpn" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+  </div>
+
+  <footer>
+    <p class="disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+  </footer>
+</div>

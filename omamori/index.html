@@ -1,0 +1,271 @@
+<title>Good Luck, Japanese Style</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #fbf1e7;
+    --bg-2: #f4e0cb;
+    --surface: #ffffff;
+    --surface-alt: #fdf3e6;
+    --ink: #3a2418;
+    --ink-muted: #8a6f5c;
+    --accent: #b3222c;
+    --accent-soft: #d97a80;
+    --gold: #c08a2e;
+    --gold-soft: #e0bd7c;
+    --border: #ecdcc4;
+    --shadow: 20px 28px 0 rgba(179, 34, 44, 0.10);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #241a14;
+    --bg-2: #2e2118;
+    --surface: #2b1f18;
+    --surface-alt: #362820;
+    --ink: #f5e6d8;
+    --ink-muted: #c7ab93;
+    --accent: #e8626c;
+    --accent-soft: #f0959b;
+    --gold: #dcae5c;
+    --gold-soft: #ecc98a;
+    --border: #493526;
+    --shadow: 20px 28px 0 rgba(0, 0, 0, 0.32);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #241a14;
+      --bg-2: #2e2118;
+      --surface: #2b1f18;
+      --surface-alt: #362820;
+      --ink: #f5e6d8;
+      --ink-muted: #c7ab93;
+      --accent: #e8626c;
+      --accent-soft: #f0959b;
+      --gold: #dcae5c;
+      --gold-soft: #ecc98a;
+      --border: #493526;
+      --shadow: 20px 28px 0 rgba(0, 0, 0, 0.32);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+
+  .hero {
+    position: relative;
+    margin: 0 -20px 40px;
+    padding: 56px 20px 48px;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(179, 34, 44, 0.16) 0, transparent 42%),
+      radial-gradient(circle at 88% 8%, rgba(192, 138, 46, 0.16) 0, transparent 45%),
+      linear-gradient(180deg, var(--bg-2), var(--bg));
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .motif {
+    width: 88px;
+    height: 88px;
+    margin: 0 auto 20px;
+    animation: sway 4.5s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .motif { animation: none; }
+  }
+
+  @keyframes sway {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-size: clamp(28px, 6vw, 38px);
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-width: 46ch;
+    margin: 0 auto;
+    text-wrap: balance;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 28px 26px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .item:nth-child(2) { background: var(--surface-alt); }
+
+  .item:hover {
+    transform: translateY(-3px);
+    box-shadow: 24px 34px 0 rgba(179, 34, 44, 0.14);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .item { transition: none; }
+    .item:hover { transform: none; }
+  }
+
+  .item-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .item h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .item p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin: 0 0 20px;
+    max-width: 60ch;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #fdf1ec;
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 6px 0 rgba(107, 20, 26, 0.28);
+  }
+
+  .cta:hover { transform: translateY(-2px); }
+  .cta:active { transform: translateY(1px); box-shadow: 0 3px 0 rgba(107, 20, 26, 0.28); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+    .cta:hover, .cta:active { transform: none; }
+  }
+
+  .cta svg { width: 14px; height: 14px; }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .disclosure {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+</style>
+
+<div class="page">
+  <div class="hero">
+    <svg class="motif" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <path d="M50 20 L58 40 L80 40 L62 53 L69 74 L50 61 L31 74 L38 53 L20 40 L42 40 Z" fill="var(--gold-soft)"/>
+      <circle cx="50" cy="50" r="8" fill="var(--accent)"/>
+    </svg>
+    <span class="eyebrow">The Japanese Lucky Charm Edit</span>
+    <h1>Good Luck, Japanese Style</h1>
+    <p class="lede">Colorful charms, a beckoning cat, and a beautifully patterned journal — shop the exact pieces styled in every pin to bring a little Japanese luck into your day.</p>
+  </div>
+
+  <div class="items">
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M14 14 C14 11 17 9 22 9 C27 9 30 11 30 14 L31 32 C31 35 27 37 22 37 C17 37 13 35 13 32 Z" fill="var(--accent-soft)"/>
+        <circle cx="22" cy="20" r="3.4" fill="var(--gold)"/>
+      </svg>
+      <h2>Japanese Omamori Charms</h2>
+      <p>A set of colorful brocade omamori charm pouches — a beautiful, meaningful accessory for your bag, car, or home that carries a piece of Japanese tradition with you.</p>
+      <a class="cta" href="https://amzn.to/4c8PEsw" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <ellipse cx="22" cy="26" rx="12" ry="11" fill="#f5ede1"/>
+        <circle cx="22" cy="15" r="8" fill="#f5ede1"/>
+        <path d="M22 5 L22 12" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="18" cy="15" r="1.6" fill="var(--ink)"/>
+        <circle cx="26" cy="15" r="1.6" fill="var(--ink)"/>
+      </svg>
+      <h2>Maneki Neko Lucky Cat Figurine</h2>
+      <p>A classic ceramic maneki-neko, made in Japan, with the iconic raised paw — a beloved symbol of luck and welcome for a shelf, desk, or entryway.</p>
+      <a class="cta" href="https://amzn.to/4fPgTKZ" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="9" y="7" width="26" height="30" rx="2.4" fill="var(--gold-soft)"/>
+        <line x1="9" y1="7" x2="9" y2="37" stroke="var(--gold)" stroke-width="2.4"/>
+        <line x1="16" y1="14" x2="28" y2="14" stroke="#fff" stroke-width="1.4" opacity="0.6"/>
+        <line x1="16" y1="20" x2="28" y2="20" stroke="#fff" stroke-width="1.4" opacity="0.6"/>
+      </svg>
+      <h2>Japanese Pattern Journal</h2>
+      <p>A beautifully patterned journal inspired by traditional Japanese design — a meaningful notebook for journaling, planning, or gifting.</p>
+      <a class="cta" href="https://amzn.to/45fh6RJ" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+  </div>
+
+  <footer>
+    <p class="disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+  </footer>
+</div>

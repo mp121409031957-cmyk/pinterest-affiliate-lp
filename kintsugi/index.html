@@ -1,0 +1,282 @@
+<title>Kintsugi: The Art of Beautiful Repair</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @font-face {
+    font-family: "Fraunces";
+    src: local("Iowan Old Style"), local("Palatino Linotype"), local("Palatino"), local("Georgia");
+  }
+
+  :root {
+    --bg: #ece4d6;
+    --bg-2: #ddd0b8;
+    --surface: #ffffff;
+    --surface-alt: #f7f1e5;
+    --ink: #2a2420;
+    --ink-muted: #7c6f60;
+    --accent: #423a33;
+    --accent-soft: #6b5f52;
+    --gold: #ad7f3c;
+    --gold-soft: #d3ab6a;
+    --crack: #b8873f;
+    --border: #ddd0b9;
+    --shadow: 20px 28px 0 rgba(66, 58, 51, 0.12);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #1c1815;
+    --bg-2: #241f19;
+    --surface: #241f19;
+    --surface-alt: #2c261e;
+    --ink: #ece1d1;
+    --ink-muted: #b3a28b;
+    --accent: #d9c6a8;
+    --accent-soft: #b3a28b;
+    --gold: #d9a851;
+    --gold-soft: #eecb8f;
+    --crack: #e0b164;
+    --border: #3a3225;
+    --shadow: 20px 28px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1c1815;
+      --bg-2: #241f19;
+      --surface: #241f19;
+      --surface-alt: #2c261e;
+      --ink: #ece1d1;
+      --ink-muted: #b3a28b;
+      --accent: #d9c6a8;
+      --accent-soft: #b3a28b;
+      --gold: #d9a851;
+      --gold-soft: #eecb8f;
+      --crack: #e0b164;
+      --border: #3a3225;
+      --shadow: 20px 28px 0 rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+
+  .hero {
+    position: relative;
+    margin: 0 -20px 40px;
+    padding: 60px 20px 48px;
+    background:
+      radial-gradient(circle at 15% 12%, rgba(173, 127, 60, 0.16) 0, transparent 45%),
+      radial-gradient(circle at 85% 85%, rgba(173, 127, 60, 0.1) 0, transparent 50%),
+      linear-gradient(180deg, var(--bg-2), var(--bg));
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .motif {
+    width: 92px;
+    height: 92px;
+    margin: 0 auto 22px;
+  }
+
+  .motif .crack {
+    stroke-dasharray: 140;
+    stroke-dashoffset: 140;
+    animation: mend 2.4s ease-out forwards;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .motif .crack { animation: none; stroke-dashoffset: 0; }
+  }
+
+  @keyframes mend {
+    to { stroke-dashoffset: 0; }
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-family: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-size: clamp(30px, 6.4vw, 42px);
+    line-height: 1.16;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0 0 16px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    max-width: 46ch;
+    margin: 0 auto;
+    text-wrap: balance;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px 26px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .item:nth-child(2) { background: var(--surface-alt); }
+
+  .item:hover {
+    transform: translateY(-3px);
+    box-shadow: 24px 34px 0 rgba(173, 127, 60, 0.16);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .item { transition: none; }
+    .item:hover { transform: none; }
+  }
+
+  .item-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .item h2 {
+    font-family: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-size: 21px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .item p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin: 0 0 20px;
+    max-width: 60ch;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 6px 0 var(--gold);
+  }
+
+  .cta:hover { transform: translateY(-2px); }
+  .cta:active { transform: translateY(1px); box-shadow: 0 3px 0 var(--gold); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+    .cta:hover, .cta:active { transform: none; }
+  }
+
+  .cta svg { width: 14px; height: 14px; }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .disclosure {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+</style>
+
+<div class="page">
+  <div class="hero">
+    <svg class="motif" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <path d="M22 30 Q20 62 30 82 Q50 92 70 82 Q80 62 78 30 Q50 20 22 30 Z" stroke="var(--ink-muted)" stroke-width="2" opacity="0.35"/>
+      <path class="crack" d="M30 26 L44 46 L38 58 L58 76 L70 30" stroke="var(--crack)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="eyebrow">The Kintsugi Repair Edit</span>
+    <h1>Kintsugi: The Japanese Art of Beautiful Repair</h1>
+    <p class="lede">Turn broken ceramics into golden works of art. Shop the exact kintsugi kits and decor styled in every pin.</p>
+  </div>
+
+  <div class="items">
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M12 14 Q10 26 14 34 Q22 40 30 34 Q34 26 32 14 Q22 9 12 14 Z" stroke="var(--accent-soft)" stroke-width="2"/>
+        <path d="M15 13 L22 24 L19 30 L27 37" stroke="var(--gold)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+      </svg>
+      <h2>Kintsugi Repair Kit</h2>
+      <p>A complete kintsugi craft kit with gold pigment, epoxy, brush, and tools — everything needed to mend broken pottery with real gold seams, gift-box ready.</p>
+      <a class="cta" href="https://amzn.to/4qdmxKx" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <circle cx="22" cy="24" r="11" stroke="var(--accent-soft)" stroke-width="2"/>
+        <path d="M15 20 L22 26 L19 31 L28 30" stroke="var(--gold)" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+        <rect x="17" y="9" width="10" height="5" rx="1.6" fill="var(--gold-soft)"/>
+      </svg>
+      <h2>Kintsugi Repair Kit for Beginners</h2>
+      <p>Comes with two practice ceramic bowls so first-timers can rehearse the gold-seam technique before repairing a piece that matters — a low-pressure way to start.</p>
+      <a class="cta" href="https://amzn.to/4qab7qZ" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M17 12 L27 12 L29 20 Q30 32 22 36 Q14 32 15 20 Z" fill="var(--surface-alt)" stroke="var(--accent)" stroke-width="1.6"/>
+        <path d="M18 14 L24 22 L21 27" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" fill="none"/>
+        <line x1="22" y1="6" x2="22" y2="12" stroke="var(--accent-soft)" stroke-width="1.6"/>
+      </svg>
+      <h2>Kintsugi-Style Decor Vase</h2>
+      <p>A ready-made ceramic vase finished with hand-painted gold kintsugi seams — no repair needed, just effortless wabi-sabi styling for a shelf or table.</p>
+      <a class="cta" href="https://amzn.to/4qb9wRJ" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+  </div>
+
+  <footer>
+    <p class="disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+  </footer>
+</div>

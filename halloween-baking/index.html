@@ -1,0 +1,289 @@
+<title>Halloween Baking Edit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #fbf1e4;
+    --bg-2: #f4e2c4;
+    --surface: #ffffff;
+    --surface-alt: #fbeed9;
+    --ink: #3a2417;
+    --ink-muted: #8a7160;
+    --accent: #c2603a;
+    --accent-soft: #e08f52;
+    --icing: #7a5a8f;
+    --icing-soft: #a684bd;
+    --border: #f0dcc0;
+    --shadow: 24px 34px 0 rgba(194, 96, 58, 0.1);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #211408;
+    --bg-2: #2b1c0d;
+    --surface: #2c1d10;
+    --surface-alt: #362512;
+    --ink: #f8e9d8;
+    --ink-muted: #c2a892;
+    --accent: #ef8b5c;
+    --accent-soft: #f3aa7d;
+    --icing: #c3a4dd;
+    --icing-soft: #a684bd;
+    --border: #4a3520;
+    --shadow: 24px 34px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #211408;
+      --bg-2: #2b1c0d;
+      --surface: #2c1d10;
+      --surface-alt: #362512;
+      --ink: #f8e9d8;
+      --ink-muted: #c2a892;
+      --accent: #ef8b5c;
+      --accent-soft: #f3aa7d;
+      --icing: #c3a4dd;
+      --icing-soft: #a684bd;
+      --border: #4a3520;
+      --shadow: 24px 34px 0 rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+
+  .hero {
+    position: relative;
+    margin: 0 -20px 40px;
+    padding: 56px 20px 48px;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(194,96,58,0.16) 0, transparent 42%),
+      radial-gradient(circle at 88% 8%, rgba(122,90,143,0.16) 0, transparent 45%),
+      radial-gradient(circle at 50% 95%, rgba(194,96,58,0.10) 0, transparent 50%),
+      linear-gradient(180deg, var(--bg-2), var(--bg));
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .motif {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 20px;
+    animation: bob 4.5s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .motif { animation: none; }
+  }
+
+  @keyframes bob {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-6px) rotate(-3deg); }
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-size: clamp(28px, 6vw, 38px);
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-width: 46ch;
+    margin: 0 auto;
+    text-wrap: balance;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 28px 26px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .item:nth-child(2) { background: var(--surface-alt); }
+
+  .item:hover {
+    transform: translateY(-3px);
+    box-shadow: 28px 40px 0 rgba(194, 96, 58, 0.12);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .item { transition: none; }
+    .item:hover { transform: none; }
+  }
+
+  .item-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .item h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .item p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin: 0 0 20px;
+    max-width: 60ch;
+  }
+
+  .fit-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--icing);
+    background: color-mix(in srgb, var(--icing) 14%, transparent);
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #fff8f2;
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 6px 0 rgba(107, 51, 22, 0.22);
+  }
+
+  .cta:hover { transform: translateY(-2px); }
+  .cta:active { transform: translateY(1px); box-shadow: 0 3px 0 rgba(107, 51, 22, 0.22); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+    .cta:hover, .cta:active { transform: none; }
+  }
+
+  .cta svg { width: 14px; height: 14px; }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .disclosure {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+</style>
+
+<div class="page">
+  <div class="hero">
+    <svg class="motif" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <ellipse cx="50" cy="55" rx="30" ry="24" fill="var(--accent-soft)"/>
+      <path d="M28 52 Q50 40 72 52" stroke="var(--icing)" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <circle cx="36" cy="48" r="3" fill="var(--surface)"/>
+      <circle cx="64" cy="48" r="3" fill="var(--surface)"/>
+      <circle cx="50" cy="64" r="3" fill="var(--surface)"/>
+      <path d="M50 31 L50 25" stroke="#5a7a3a" stroke-width="2.6" stroke-linecap="round"/>
+    </svg>
+    <span class="eyebrow">The Halloween Baking Edit</span>
+    <h1>Everything You Need to Bake (and Gift) the Cutest Halloween Cookies</h1>
+    <p class="lede">Spooky-cute cookies made simple — shop the exact pieces to cut, decorate, and package Halloween treats that look bakery-perfect.</p>
+  </div>
+
+  <div class="items">
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M22 6 L27 15 L37 15 L29 21 L32 31 L22 25 L12 31 L15 21 L7 15 L17 15 Z" fill="var(--accent)"/>
+      </svg>
+      <span class="fit-tag">12-piece stainless steel</span>
+      <h2>Halloween Cookie Cutters Set</h2>
+      <p>A 12-piece stainless steel set with pumpkin, ghost, witch, bat, cat, and skull shapes — everything you need to turn one batch of sugar cookie dough into a whole spooky lineup. Durable, rust-resistant, and easy to clean.</p>
+      <a class="cta" href="https://amzn.to/4wEvUFr" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M20 8 L28 8 L26 20 Q22 24 18 20 Z" fill="var(--icing)"/>
+        <rect x="19" y="4" width="6" height="6" rx="1.5" fill="var(--icing-soft)"/>
+        <circle cx="22" cy="30" r="2" fill="var(--accent)"/>
+        <circle cx="16" cy="34" r="1.6" fill="var(--accent-soft)"/>
+        <circle cx="28" cy="34" r="1.6" fill="var(--accent-soft)"/>
+      </svg>
+      <span class="fit-tag">No baking required</span>
+      <h2>Halloween Cookie Decorating Kit</h2>
+      <p>The easiest way to host a cookie decorating party — pre-baked cookies, icing bags, candy pieces, and glittery sugars all in one kit. No baking required, just pure decorating fun for kids and adults alike.</p>
+      <a class="cta" href="https://amzn.to/4wUfRTS" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M14 16 L30 16 L28 36 Q22 40 16 36 Z" fill="var(--surface-alt)" stroke="var(--accent)" stroke-width="1.6"/>
+        <path d="M14 16 Q22 10 30 16" stroke="var(--accent)" stroke-width="2.2" fill="none"/>
+        <rect x="19" y="6" width="6" height="8" rx="2" fill="var(--icing)"/>
+      </svg>
+      <span class="fit-tag">Clear cellophane, ribbon-ready</span>
+      <h2>Halloween Treat Bags for Homemade Cookies</h2>
+      <p>Clear pumpkin-print cellophane bags that make any homemade cookie look gift-ready. Perfect for trick-or-treaters, classroom parties, or dropping off a sweet surprise to a neighbor.</p>
+      <a class="cta" href="https://amzn.to/3RMbsmV" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+  </div>
+
+  <footer>
+    <p class="disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+  </footer>
+</div>

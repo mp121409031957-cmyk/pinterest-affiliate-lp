@@ -1,0 +1,259 @@
+<title>Halloween Drinkware &amp; Mugs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #ece7e3;
+    --bg-2: #ddd3ca;
+    --surface: #fbf8f5;
+    --surface-alt: #f4eee8;
+    --ink: #211a17;
+    --ink-muted: #6f6259;
+    --accent: #1c1613;
+    --accent-soft: #4a3d35;
+    --ember: #b5541f;
+    --ember-soft: #d98a4b;
+    --border: #ddd0c3;
+    --shadow: 20px 28px 0 rgba(28, 22, 19, 0.14);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #16110e;
+    --bg-2: #201914;
+    --surface: #1e1712;
+    --surface-alt: #251c16;
+    --ink: #f0e6da;
+    --ink-muted: #c2ac95;
+    --accent: #f0e6da;
+    --accent-soft: #c2ac95;
+    --ember: #e8935a;
+    --ember-soft: #f0ac7c;
+    --border: #362a20;
+    --shadow: 20px 28px 0 rgba(0, 0, 0, 0.45);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #16110e;
+      --bg-2: #201914;
+      --surface: #1e1712;
+      --surface-alt: #251c16;
+      --ink: #f0e6da;
+      --ink-muted: #c2ac95;
+      --accent: #f0e6da;
+      --accent-soft: #c2ac95;
+      --ember: #e8935a;
+      --ember-soft: #f0ac7c;
+      --border: #362a20;
+      --shadow: 20px 28px 0 rgba(0, 0, 0, 0.45);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+
+  .hero {
+    position: relative;
+    margin: 0 -20px 40px;
+    padding: 56px 20px 48px;
+    background:
+      radial-gradient(circle at 15% 15%, rgba(181, 84, 31, 0.16) 0, transparent 45%),
+      radial-gradient(circle at 88% 85%, rgba(28, 22, 19, 0.14) 0, transparent 50%),
+      linear-gradient(180deg, var(--bg-2), var(--bg));
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .motif {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 20px;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ember);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-family: Georgia, "Iowan Old Style", Palatino, serif;
+    font-size: clamp(28px, 6vw, 38px);
+    line-height: 1.18;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-width: 46ch;
+    margin: 0 auto;
+    text-wrap: balance;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 28px 26px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .item:nth-child(2) { background: var(--surface-alt); }
+
+  .item:hover {
+    transform: translateY(-3px);
+    box-shadow: 24px 34px 0 rgba(181, 84, 31, 0.18);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .item { transition: none; }
+    .item:hover { transform: none; }
+  }
+
+  .item-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .item h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .item p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin: 0 0 20px;
+    max-width: 60ch;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 6px 0 var(--ember);
+  }
+
+  .cta:hover { transform: translateY(-2px); }
+  .cta:active { transform: translateY(1px); box-shadow: 0 3px 0 var(--ember); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+    .cta:hover, .cta:active { transform: none; }
+  }
+
+  .cta svg { width: 14px; height: 14px; }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .disclosure {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+</style>
+
+<div class="page">
+  <div class="hero">
+    <svg class="motif" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <path d="M35 42 Q35 30 50 30 Q65 30 65 42 L65 66 Q65 72 58 72 L42 72 Q35 72 35 66 Z" fill="var(--accent-soft)" opacity="0.7"/>
+      <rect x="30" y="66" width="40" height="6" rx="3" fill="var(--ember-soft)"/>
+      <path d="M44 42 Q46 36 50 36 Q54 36 56 42" stroke="var(--ember)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    </svg>
+    <span class="eyebrow">The Haunted Hollows Edit</span>
+    <h1>Halloween Drinkware &amp; Mugs</h1>
+    <p class="lede">Witchy mugs, gothic tumblers, and etched party glassware — shop the exact dark-botanical drinkware styled in every pin for your spookiest sips.</p>
+  </div>
+
+  <div class="items">
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M12 14 L12 30 Q12 34 16 34 L26 34 Q30 34 30 30 L30 14 Z" fill="var(--ember-soft)"/>
+        <path d="M30 18 Q36 18 36 24 Q36 30 30 30" stroke="var(--accent)" stroke-width="2.4" fill="none"/>
+      </svg>
+      <h2>Halloween Witch Cauldron Coffee Mug</h2>
+      <p>A large-capacity black ceramic mug with a moody witch-and-moon design — great for autumn mornings or as a seasonal gift.</p>
+      <a class="cta" href="https://amzn.to/3UyPMeQ" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="14" y="8" width="16" height="28" rx="4" fill="var(--accent-soft)"/>
+        <rect x="14" y="8" width="16" height="6" rx="3" fill="var(--surface)" stroke="var(--ember)" stroke-width="1.4"/>
+      </svg>
+      <h2>Gothic Halloween Tumbler</h2>
+      <p>A double-wall insulated stainless steel tumbler with a moody dark botanical and floral wrap — keeps drinks hot or cold, stylish well beyond Halloween.</p>
+      <a class="cta" href="https://amzn.to/4wufxKK" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M22 10 L14 30 L30 30 Z" fill="none" stroke="var(--ember)" stroke-width="2"/>
+        <rect x="20" y="30" width="4" height="6" fill="var(--accent-soft)"/>
+        <rect x="15" y="36" width="14" height="2.4" rx="1.2" fill="var(--accent-soft)"/>
+      </svg>
+      <h2>Halloween Glassware Set</h2>
+      <p>A handmade set of stemless glasses featuring raised pumpkin, ghost, cat and spiderweb artwork — elegant spooky-chic style for your Halloween gathering.</p>
+      <a class="cta" href="https://amzn.to/4x2CjKU" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+  </div>
+
+  <footer>
+    <p class="disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+  </footer>
+</div>

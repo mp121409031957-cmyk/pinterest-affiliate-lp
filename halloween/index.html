@@ -1,0 +1,275 @@
+<title>Kawaii Halloween Costume Edit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #fdf1f7;
+    --bg-2: #f3e2f5;
+    --surface: #ffffff;
+    --surface-alt: #f7e9fa;
+    --ink: #2a1b33;
+    --ink-muted: #77637f;
+    --accent: #8f5fc4;
+    --accent-soft: #c9a3ec;
+    --pumpkin: #ff7a45;
+    --pumpkin-ink: #7a2e0e;
+    --border: #ecd7f1;
+    --shadow: 24px 34px 0 rgba(143, 95, 196, 0.07);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #1c1223;
+    --bg-2: #241730;
+    --surface: #26192f;
+    --surface-alt: #2e1e3a;
+    --ink: #f5e9f8;
+    --ink-muted: #bda6c4;
+    --accent: #c8a0ef;
+    --accent-soft: #9d6fd4;
+    --pumpkin: #ff9257;
+    --pumpkin-ink: #ffd9c2;
+    --border: #3b2946;
+    --shadow: 24px 34px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1c1223;
+      --bg-2: #241730;
+      --surface: #26192f;
+      --surface-alt: #2e1e3a;
+      --ink: #f5e9f8;
+      --ink-muted: #bda6c4;
+      --accent: #c8a0ef;
+      --accent-soft: #9d6fd4;
+      --pumpkin: #ff9257;
+      --pumpkin-ink: #ffd9c2;
+      --border: #3b2946;
+      --shadow: 24px 34px 0 rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+
+  .hero {
+    position: relative;
+    margin: 0 -20px 40px;
+    padding: 56px 20px 48px;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(255,122,69,0.16) 0, transparent 40%),
+      radial-gradient(circle at 85% 10%, rgba(143,95,196,0.18) 0, transparent 45%),
+      radial-gradient(circle at 50% 90%, rgba(255,122,69,0.10) 0, transparent 50%),
+      linear-gradient(180deg, var(--bg-2), var(--bg));
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .motif {
+    width: 92px;
+    height: 92px;
+    margin: 0 auto 20px;
+    animation: bob 4.5s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .motif { animation: none; }
+  }
+
+  @keyframes bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-size: clamp(28px, 6vw, 38px);
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-width: 46ch;
+    margin: 0 auto;
+    text-wrap: balance;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 28px 26px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .item:nth-child(2) { background: var(--surface-alt); }
+
+  .item:hover {
+    transform: translateY(-3px);
+    box-shadow: 28px 40px 0 rgba(143, 95, 196, 0.1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .item { transition: none; }
+    .item:hover { transform: none; }
+  }
+
+  .item-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .item h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .item p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin: 0 0 20px;
+    max-width: 60ch;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--pumpkin);
+    color: #fff8f3;
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 6px 0 rgba(122, 46, 14, 0.18);
+  }
+
+  .cta:hover { transform: translateY(-2px); }
+  .cta:active { transform: translateY(1px); box-shadow: 0 3px 0 rgba(122, 46, 14, 0.18); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+    .cta:hover, .cta:active { transform: none; }
+  }
+
+  .cta svg { width: 14px; height: 14px; }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .disclosure {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+</style>
+
+<div class="page">
+  <div class="hero">
+    <svg class="motif" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <path d="M30 42 L20 14 L42 30 Z" fill="var(--accent-soft)"/>
+      <path d="M70 42 L80 14 L58 30 Z" fill="var(--accent-soft)"/>
+      <circle cx="50" cy="58" r="26" fill="var(--accent)"/>
+      <circle cx="41" cy="55" r="3.2" fill="#fff"/>
+      <circle cx="59" cy="55" r="3.2" fill="#fff"/>
+      <path d="M44 66 Q50 71 56 66" stroke="#fff" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+      <circle cx="78" cy="70" r="10" fill="var(--pumpkin)"/>
+      <path d="M78 60 L78 56" stroke="#5a7a3a" stroke-width="2.4" stroke-linecap="round"/>
+    </svg>
+    <span class="eyebrow">The Kawaii Halloween Edit</span>
+    <h1>Your Kawaiiified Halloween, Ready to Wear</h1>
+    <p class="lede">Pastel cat ears, a plush pumpkin charm, and just enough spooky-cute — the exact pieces to recreate the look, shipped straight from Amazon.</p>
+  </div>
+
+  <div class="items">
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M12 20 L7 6 L20 15 Z" fill="var(--accent)"/>
+        <path d="M32 20 L37 6 L24 15 Z" fill="var(--accent)"/>
+        <path d="M8 24 Q22 15 36 24 L36 30 Q22 22 8 30 Z" fill="var(--accent-soft)"/>
+      </svg>
+      <h2>Cat Ear Headband &amp; Tutu Costume Set</h2>
+      <p>The core of the look: a plush cat-ear headband paired with a layered pastel tutu skirt in soft lavender, pink, and black. Comfortable, adjustable, and ready to wear straight out of the box — perfect for parties, trick-or-treating, or a themed photoshoot.</p>
+      <a class="cta" href="https://amzn.to/4weo4Bn" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <circle cx="22" cy="25" r="13" fill="var(--pumpkin)"/>
+        <path d="M22 12 L22 7" stroke="#5a7a3a" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M14 25 Q22 20 30 25" stroke="#c9560f" stroke-width="1.6" fill="none" opacity="0.6"/>
+      </svg>
+      <h2>Pastel Pumpkin Charm Mini Bag</h2>
+      <p>A tiny jack-o'-lantern bag that doubles as candy storage or a cute finishing touch for any kawaii outfit. Soft plush texture with a hand strap, sized just right to clip onto a costume or carry on its own.</p>
+      <a class="cta" href="https://amzn.to/4bPARTF" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M14 10 H30 L27 24 Q26 30 22 30 Q18 30 17 24 Z" fill="#fff" stroke="var(--border)" stroke-width="1.2"/>
+        <path d="M20 10 L20 20 L22 26 L24 20 L24 10" fill="var(--accent-soft)" opacity="0.5"/>
+      </svg>
+      <h2>Cute Fang Clip-On Costume Accessory</h2>
+      <p>An easy no-makeup way to add a playful "spooky-cute" detail — a soft clip-on fang accessory that fits comfortably and photographs beautifully. No face paint or special-effects skill required.</p>
+      <a class="cta" href="https://amzn.to/4pT1VH6" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+  </div>
+
+  <footer>
+    <p class="disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+  </footer>
+</div>

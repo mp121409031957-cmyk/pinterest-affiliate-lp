@@ -1,0 +1,262 @@
+<title>Thanksgiving Pie &amp; Dessert Styling</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #f5ece0;
+    --bg-2: #ecd6b3;
+    --surface: #fbf5ea;
+    --surface-alt: #f6ecd7;
+    --ink: #2e2013;
+    --ink-muted: #7d6440;
+    --accent: #2e2013;
+    --accent-soft: #6b4f2a;
+    --pumpkin: #c8641f;
+    --pumpkin-soft: #e4924a;
+    --border: #e2c88f;
+    --shadow: 20px 28px 0 rgba(200, 100, 31, 0.16);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #1c1408;
+    --bg-2: #26190c;
+    --surface: #231909;
+    --surface-alt: #2c1f0e;
+    --ink: #f4e6cb;
+    --ink-muted: #d0a76a;
+    --accent: #f4e6cb;
+    --accent-soft: #d0a76a;
+    --pumpkin: #ef8a3f;
+    --pumpkin-soft: #f4ad6f;
+    --border: #40301a;
+    --shadow: 20px 28px 0 rgba(0, 0, 0, 0.45);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1c1408;
+      --bg-2: #26190c;
+      --surface: #231909;
+      --surface-alt: #2c1f0e;
+      --ink: #f4e6cb;
+      --ink-muted: #d0a76a;
+      --accent: #f4e6cb;
+      --accent-soft: #d0a76a;
+      --pumpkin: #ef8a3f;
+      --pumpkin-soft: #f4ad6f;
+      --border: #40301a;
+      --shadow: 20px 28px 0 rgba(0, 0, 0, 0.45);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+
+  .hero {
+    position: relative;
+    margin: 0 -20px 40px;
+    padding: 56px 20px 48px;
+    background:
+      radial-gradient(circle at 15% 15%, rgba(200, 100, 31, 0.18) 0, transparent 45%),
+      radial-gradient(circle at 88% 85%, rgba(46, 32, 19, 0.14) 0, transparent 50%),
+      linear-gradient(180deg, var(--bg-2), var(--bg));
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .motif {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 20px;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--pumpkin);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-family: Georgia, "Iowan Old Style", Palatino, serif;
+    font-size: clamp(28px, 6vw, 38px);
+    line-height: 1.18;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-width: 46ch;
+    margin: 0 auto;
+    text-wrap: balance;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 28px 26px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .item:nth-child(2) { background: var(--surface-alt); }
+
+  .item:hover {
+    transform: translateY(-3px);
+    box-shadow: 24px 34px 0 rgba(200, 100, 31, 0.2);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .item { transition: none; }
+    .item:hover { transform: none; }
+  }
+
+  .item-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .item h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .item p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin: 0 0 20px;
+    max-width: 60ch;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 6px 0 var(--pumpkin);
+  }
+
+  .cta:hover { transform: translateY(-2px); }
+  .cta:active { transform: translateY(1px); box-shadow: 0 3px 0 var(--pumpkin); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+    .cta:hover, .cta:active { transform: none; }
+  }
+
+  .cta svg { width: 14px; height: 14px; }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .disclosure {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+</style>
+
+<div class="page">
+  <div class="hero">
+    <svg class="motif" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <path d="M50 68 Q30 68 30 50 Q30 40 50 40 Q70 40 70 50 Q70 68 50 68 Z" fill="var(--pumpkin-soft)"/>
+      <path d="M28 68 Q50 60 72 68 L72 70 Q50 64 28 70 Z" fill="var(--accent-soft)" opacity="0.7"/>
+      <path d="M50 40 Q46 32 50 26" stroke="var(--accent-soft)" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </svg>
+    <span class="eyebrow">The Dessert Table Edit</span>
+    <h1>Thanksgiving Pie &amp; Dessert Styling</h1>
+    <p class="lede">A tiered pie pedestal, a padded pie carrier, and a pumpkin-shaped cupcake stand — shop the exact pieces styled in every pin to build a stunning Thanksgiving dessert table.</p>
+  </div>
+
+  <div class="items">
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <ellipse cx="22" cy="14" rx="9" ry="3" fill="var(--pumpkin-soft)"/>
+        <path d="M13 14 V17 Q22 20 31 17 V14" stroke="var(--accent-soft)" stroke-width="1.6" fill="none"/>
+        <rect x="20" y="17" width="4" height="14" fill="var(--accent-soft)"/>
+        <ellipse cx="22" cy="32" rx="12" ry="3" fill="var(--accent-soft)" opacity="0.6"/>
+      </svg>
+      <h2>Pie Pedestal Stand</h2>
+      <p>A rustic farmhouse wood pedestal stand that elevates a pie into the centerpiece of your dessert table — an instant height boost for any spread.</p>
+      <a class="cta" href="https://amzn.to/3U0ToWS" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="10" y="18" width="24" height="16" rx="4" fill="none" stroke="var(--pumpkin)" stroke-width="2"/>
+        <path d="M14 18 Q22 8 30 18" stroke="var(--accent-soft)" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </svg>
+      <h2>Pie Carrier for Travel</h2>
+      <p>A padded, insulated pie carrier with a non-slip heating pad — the easiest way to bring a warm pie safely to Thanksgiving dinner.</p>
+      <a class="cta" href="https://amzn.to/3U0pIZX" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <ellipse cx="22" cy="14" rx="8" ry="2.6" fill="var(--pumpkin-soft)"/>
+        <ellipse cx="22" cy="23" rx="11" ry="2.8" fill="var(--pumpkin-soft)" opacity="0.85"/>
+        <ellipse cx="22" cy="32" rx="14" ry="3" fill="var(--pumpkin-soft)" opacity="0.7"/>
+        <rect x="21" y="8" width="2" height="26" fill="var(--accent-soft)"/>
+      </svg>
+      <h2>Tiered Fall Dessert Stand</h2>
+      <p>A pumpkin-shaped 3-tier cupcake stand for the cutest Thanksgiving dessert display — the perfect centerpiece for mini treats.</p>
+      <a class="cta" href="https://amzn.to/3S9TP0y" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+  </div>
+
+  <footer>
+    <p class="disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+  </footer>
+</div>

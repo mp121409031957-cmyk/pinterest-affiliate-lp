@@ -1,0 +1,271 @@
+<title>Pastel Halloween Party Tableware</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #f9f1f6;
+    --bg-2: #ecd8e8;
+    --surface: #ffffff;
+    --surface-alt: #f6eef4;
+    --ink: #3a2f38;
+    --ink-muted: #8c7a89;
+    --accent: #a878bf;
+    --accent-soft: #cba9db;
+    --pop: #f0a3ae;
+    --pop-soft: #f6c6cd;
+    --border: #ecdbe6;
+    --shadow: 20px 28px 0 rgba(168, 120, 191, 0.14);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #241a22;
+    --bg-2: #2e2129;
+    --surface: #2c2028;
+    --surface-alt: #352730;
+    --ink: #f3e6ef;
+    --ink-muted: #c7aec2;
+    --accent: #cba0e0;
+    --accent-soft: #ddc0ec;
+    --pop: #f4b3bd;
+    --pop-soft: #f7cbd2;
+    --border: #47323f;
+    --shadow: 20px 28px 0 rgba(0, 0, 0, 0.35);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #241a22;
+      --bg-2: #2e2129;
+      --surface: #2c2028;
+      --surface-alt: #352730;
+      --ink: #f3e6ef;
+      --ink-muted: #c7aec2;
+      --accent: #cba0e0;
+      --accent-soft: #ddc0ec;
+      --pop: #f4b3bd;
+      --pop-soft: #f7cbd2;
+      --border: #47323f;
+      --shadow: 20px 28px 0 rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+
+  .hero {
+    position: relative;
+    margin: 0 -20px 40px;
+    padding: 56px 20px 48px;
+    background:
+      radial-gradient(circle at 14% 16%, rgba(168, 120, 191, 0.18) 0, transparent 42%),
+      radial-gradient(circle at 88% 10%, rgba(240, 163, 174, 0.2) 0, transparent 45%),
+      linear-gradient(180deg, var(--bg-2), var(--bg));
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .motif {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 20px;
+    animation: bob 4.2s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .motif { animation: none; }
+  }
+
+  @keyframes bob {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-6px) rotate(2deg); }
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-size: clamp(28px, 6vw, 38px);
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-width: 46ch;
+    margin: 0 auto;
+    text-wrap: balance;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 28px 26px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .item:nth-child(2) { background: var(--surface-alt); }
+
+  .item:hover {
+    transform: translateY(-3px);
+    box-shadow: 24px 34px 0 rgba(168, 120, 191, 0.18);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .item { transition: none; }
+    .item:hover { transform: none; }
+  }
+
+  .item-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .item h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .item p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin: 0 0 20px;
+    max-width: 60ch;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #fdfaff;
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 6px 0 var(--pop);
+  }
+
+  .cta:hover { transform: translateY(-2px); }
+  .cta:active { transform: translateY(1px); box-shadow: 0 3px 0 var(--pop); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+    .cta:hover, .cta:active { transform: none; }
+  }
+
+  .cta svg { width: 14px; height: 14px; }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .disclosure {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+</style>
+
+<div class="page">
+  <div class="hero">
+    <svg class="motif" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <ellipse cx="50" cy="72" rx="30" ry="10" fill="var(--accent-soft)" opacity="0.5"/>
+      <path d="M35 68 Q35 40 50 40 Q65 40 65 68 Q58 62 50 68 Q42 62 35 68 Z" fill="var(--pop-soft)"/>
+      <circle cx="44" cy="52" r="2.6" fill="var(--ink)"/>
+      <circle cx="56" cy="52" r="2.6" fill="var(--ink)"/>
+    </svg>
+    <span class="eyebrow">The Kawaii Halloween Party Edit</span>
+    <h1>Pastel Halloween Party Tableware</h1>
+    <p class="lede">Ghosts, pumpkins, and pastel colors — shop the exact tableware styled in every pin to plan the cutest kawaii Halloween party.</p>
+  </div>
+
+  <div class="items">
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <ellipse cx="22" cy="24" rx="14" ry="6" fill="var(--pop-soft)"/>
+        <ellipse cx="22" cy="22" rx="14" ry="6" fill="var(--accent-soft)"/>
+        <circle cx="18" cy="21" r="1.4" fill="var(--ink)"/>
+        <circle cx="26" cy="21" r="1.4" fill="var(--ink)"/>
+      </svg>
+      <h2>Pastel Ghost Party Tableware Set</h2>
+      <p>Ghost-shaped paper plates, napkins, and forks in soft pink, lavender, and mint — a full kawaii place setting that serves 24 guests.</p>
+      <a class="cta" href="https://amzn.to/3RYnQ3j" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M22 30 L22 16" stroke="var(--accent)" stroke-width="2"/>
+        <path d="M14 16 Q22 8 30 16 Q26 20 22 16 Q18 20 14 16 Z" fill="var(--pop-soft)"/>
+        <ellipse cx="22" cy="32" rx="8" ry="3" fill="var(--accent-soft)"/>
+      </svg>
+      <h2>Halloween Cupcake Toppers</h2>
+      <p>Glitter pumpkin, ghost, cat, and witch hat toppers that turn any plain cupcake into an adorable Halloween dessert-table centerpiece.</p>
+      <a class="cta" href="https://amzn.to/4bJeNd8" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M15 16 L29 16 L27 34 Q22 37 17 34 Z" fill="var(--accent-soft)"/>
+        <line x1="22" y1="10" x2="22" y2="18" stroke="var(--pop)" stroke-width="2"/>
+      </svg>
+      <h2>Pastel Ghost Paper Cups</h2>
+      <p>Soft pastel "boo" print paper cups with lids and sleeves — the finishing touch for a coordinated kawaii Halloween party table.</p>
+      <a class="cta" href="https://amzn.to/4wppPM7" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+  </div>
+
+  <footer>
+    <p class="disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+  </footer>
+</div>

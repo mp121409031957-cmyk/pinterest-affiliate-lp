@@ -1,0 +1,255 @@
+<title>Thanksgiving Wreaths &amp; Door Decor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #f2ece1;
+    --bg-2: #e6d6b8;
+    --surface: #fbf7ee;
+    --surface-alt: #f4ecda;
+    --ink: #2c2313;
+    --ink-muted: #7a6a45;
+    --accent: #2c2313;
+    --accent-soft: #6b5730;
+    --rust: #b6551f;
+    --rust-soft: #d98a3f;
+    --border: #ddc99a;
+    --shadow: 20px 28px 0 rgba(182, 85, 31, 0.16);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #1a1509;
+    --bg-2: #241c0f;
+    --surface: #211a0c;
+    --surface-alt: #2a2110;
+    --ink: #f2e6c9;
+    --ink-muted: #c9a86a;
+    --accent: #f2e6c9;
+    --accent-soft: #c9a86a;
+    --rust: #e08148;
+    --rust-soft: #ecab6f;
+    --border: #3b2c14;
+    --shadow: 20px 28px 0 rgba(0, 0, 0, 0.45);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1a1509;
+      --bg-2: #241c0f;
+      --surface: #211a0c;
+      --surface-alt: #2a2110;
+      --ink: #f2e6c9;
+      --ink-muted: #c9a86a;
+      --accent: #f2e6c9;
+      --accent-soft: #c9a86a;
+      --rust: #e08148;
+      --rust-soft: #ecab6f;
+      --border: #3b2c14;
+      --shadow: 20px 28px 0 rgba(0, 0, 0, 0.45);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+
+  .hero {
+    position: relative;
+    margin: 0 -20px 40px;
+    padding: 56px 20px 48px;
+    background:
+      radial-gradient(circle at 15% 15%, rgba(182, 85, 31, 0.18) 0, transparent 45%),
+      radial-gradient(circle at 88% 85%, rgba(44, 35, 19, 0.14) 0, transparent 50%),
+      linear-gradient(180deg, var(--bg-2), var(--bg));
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .motif {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 20px;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-family: Georgia, "Iowan Old Style", Palatino, serif;
+    font-size: clamp(28px, 6vw, 38px);
+    line-height: 1.18;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-width: 46ch;
+    margin: 0 auto;
+    text-wrap: balance;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 28px 26px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .item:nth-child(2) { background: var(--surface-alt); }
+
+  .item:hover {
+    transform: translateY(-3px);
+    box-shadow: 24px 34px 0 rgba(182, 85, 31, 0.2);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .item { transition: none; }
+    .item:hover { transform: none; }
+  }
+
+  .item-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .item h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .item p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin: 0 0 20px;
+    max-width: 60ch;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 6px 0 var(--rust);
+  }
+
+  .cta:hover { transform: translateY(-2px); }
+  .cta:active { transform: translateY(1px); box-shadow: 0 3px 0 var(--rust); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+    .cta:hover, .cta:active { transform: none; }
+  }
+
+  .cta svg { width: 14px; height: 14px; }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .disclosure {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+</style>
+
+<div class="page">
+  <div class="hero">
+    <svg class="motif" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <circle cx="50" cy="50" r="30" fill="none" stroke="var(--rust-soft)" stroke-width="10"/>
+      <circle cx="50" cy="50" r="30" fill="none" stroke="var(--accent-soft)" stroke-width="4" stroke-dasharray="4 8" opacity="0.6"/>
+    </svg>
+    <span class="eyebrow">The Front Door Edit</span>
+    <h1>Thanksgiving Wreaths &amp; Door Decor</h1>
+    <p class="lede">A dried harvest wreath, a cozy textured wreath, and a Thanksgiving welcome mat — shop the exact pieces styled in every pin to warm up your entryway this season.</p>
+  </div>
+
+  <div class="items">
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <circle cx="22" cy="22" r="13" fill="none" stroke="var(--rust-soft)" stroke-width="5"/>
+      </svg>
+      <h2>Fall Harvest Wreath</h2>
+      <p>A dried-flower harvest wreath with pine cones, berries and maple leaves in burnt orange and mustard — the easiest way to welcome guests this Thanksgiving.</p>
+      <a class="cta" href="https://amzn.to/4wsieMH" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <circle cx="22" cy="22" r="13" fill="none" stroke="var(--accent-soft)" stroke-width="6" stroke-linecap="round" stroke-dasharray="3 6"/>
+      </svg>
+      <h2>Textured Fall Wreath</h2>
+      <p>A cozy, richly textured wreath in mustard and rust tones for a nostalgic, handmade touch on your front door.</p>
+      <a class="cta" href="https://amzn.to/4fZHKnL" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="9" y="14" width="26" height="17" rx="3" fill="none" stroke="var(--rust)" stroke-width="2"/>
+        <path d="M14 26 Q20 19 26 26 Q30 22 33 26" stroke="var(--accent-soft)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      </svg>
+      <h2>Thanksgiving Welcome Mat</h2>
+      <p>A festive coir welcome mat with a pumpkin design — the simplest seasonal swap to instantly welcome guests to your porch.</p>
+      <a class="cta" href="https://amzn.to/4giNgAQ" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+  </div>
+
+  <footer>
+    <p class="disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+  </footer>
+</div>

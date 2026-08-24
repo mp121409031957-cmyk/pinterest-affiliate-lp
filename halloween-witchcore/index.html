@@ -1,0 +1,259 @@
+<title>Witchcore Accessories</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #f3edf7;
+    --bg-2: #e4d5ee;
+    --surface: #fdfbff;
+    --surface-alt: #f6effa;
+    --ink: #241a2e;
+    --ink-muted: #6b5a7c;
+    --accent: #2b1d38;
+    --accent-soft: #6a4f8a;
+    --gold: #a8843e;
+    --gold-soft: #c9a45f;
+    --border: #ded0ea;
+    --shadow: 20px 28px 0 rgba(107, 79, 138, 0.14);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #150f1c;
+    --bg-2: #1e1528;
+    --surface: #1c1425;
+    --surface-alt: #241a30;
+    --ink: #ede4f5;
+    --ink-muted: #b6a2cc;
+    --accent: #ede4f5;
+    --accent-soft: #b6a2cc;
+    --gold: #e0b96b;
+    --gold-soft: #edc986;
+    --border: #362848;
+    --shadow: 20px 28px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #150f1c;
+      --bg-2: #1e1528;
+      --surface: #1c1425;
+      --surface-alt: #241a30;
+      --ink: #ede4f5;
+      --ink-muted: #b6a2cc;
+      --accent: #ede4f5;
+      --accent-soft: #b6a2cc;
+      --gold: #e0b96b;
+      --gold-soft: #edc986;
+      --border: #362848;
+      --shadow: 20px 28px 0 rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+
+  .hero {
+    position: relative;
+    margin: 0 -20px 40px;
+    padding: 56px 20px 48px;
+    background:
+      radial-gradient(circle at 15% 15%, rgba(168, 132, 62, 0.14) 0, transparent 45%),
+      radial-gradient(circle at 88% 85%, rgba(43, 29, 56, 0.14) 0, transparent 50%),
+      linear-gradient(180deg, var(--bg-2), var(--bg));
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .motif {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 20px;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-family: Georgia, "Iowan Old Style", Palatino, serif;
+    font-size: clamp(28px, 6vw, 38px);
+    line-height: 1.18;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-width: 46ch;
+    margin: 0 auto;
+    text-wrap: balance;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 28px 26px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .item:nth-child(2) { background: var(--surface-alt); }
+
+  .item:hover {
+    transform: translateY(-3px);
+    box-shadow: 24px 34px 0 rgba(107, 79, 138, 0.18);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .item { transition: none; }
+    .item:hover { transform: none; }
+  }
+
+  .item-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .item h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .item p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin: 0 0 20px;
+    max-width: 60ch;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 6px 0 var(--gold);
+  }
+
+  .cta:hover { transform: translateY(-2px); }
+  .cta:active { transform: translateY(1px); box-shadow: 0 3px 0 var(--gold); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+    .cta:hover, .cta:active { transform: none; }
+  }
+
+  .cta svg { width: 14px; height: 14px; }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .disclosure {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+</style>
+
+<div class="page">
+  <div class="hero">
+    <svg class="motif" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <circle cx="50" cy="50" r="20" stroke="var(--gold)" stroke-width="2.4" fill="none"/>
+      <path d="M50 30 L54.5 44 L69 44 L57 52.5 L61.5 66.5 L50 58 L38.5 66.5 L43 52.5 L31 44 L45.5 44 Z" fill="var(--gold-soft)" opacity="0.8"/>
+      <path d="M28 74 A16 16 0 1 0 28 46 A12 12 0 1 1 28 74 Z" fill="var(--accent-soft)" opacity="0.7"/>
+    </svg>
+    <span class="eyebrow">The Witchcore Edit</span>
+    <h1>Witchcore Accessories</h1>
+    <p class="lede">Celestial jewelry, tarot & crystals, and vintage velvet accessories — shop the exact mystical pieces styled in every pin for your most enchanting Halloween look.</p>
+  </div>
+
+  <div class="items">
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <circle cx="22" cy="22" r="14" stroke="var(--gold)" stroke-width="2"/>
+        <path d="M22 14 L24.4 19.6 L30.5 19.6 L25.5 23.2 L27.4 29 L22 25.3 L16.6 29 L18.5 23.2 L13.5 19.6 L19.6 19.6 Z" fill="var(--gold-soft)"/>
+      </svg>
+      <h2>Celestial Jewelry Set</h2>
+      <p>Moon, star & pentagram necklace, earrings and ring — elegant everyday witchcore style that works for Halloween and beyond.</p>
+      <a class="cta" href="https://amzn.to/4gaR9aP" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="10" y="8" width="16" height="24" rx="2" fill="var(--accent-soft)"/>
+        <rect x="16" y="14" width="16" height="24" rx="2" fill="var(--surface)" stroke="var(--gold)" stroke-width="1.6"/>
+        <circle cx="24" cy="26" r="3" fill="var(--gold-soft)"/>
+      </svg>
+      <h2>Tarot & Crystal Gift Set</h2>
+      <p>A beginner-friendly tarot deck styled with crystals and candlelight — the perfect starter kit for Halloween gifting or your own cozy ritual.</p>
+      <a class="cta" href="https://amzn.to/4qkqVrc" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <path d="M10 26 Q22 6 34 26 Z" fill="var(--accent-soft)"/>
+        <ellipse cx="22" cy="27" rx="13" ry="3" fill="var(--accent)"/>
+      </svg>
+      <h2>Witchcore Accessories</h2>
+      <p>A velvet witch hat, lace choker and gloves set for the most mystical Halloween styling — vintage witchy elegance in every piece.</p>
+      <a class="cta" href="https://amzn.to/4i7Op0r" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+  </div>
+
+  <footer>
+    <p class="disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+  </footer>
+</div>

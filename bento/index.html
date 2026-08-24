@@ -1,0 +1,278 @@
+<title>Build Your Perfect Bento Box</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #fdf3e8;
+    --bg-2: #fbe2cd;
+    --surface: #ffffff;
+    --surface-alt: #fff8ef;
+    --ink: #3a2b1f;
+    --ink-muted: #8c7561;
+    --accent: #e2695b;
+    --accent-soft: #f0a89d;
+    --gold: #e0ab3f;
+    --gold-soft: #f3d68f;
+    --border: #f5e1c9;
+    --shadow: 20px 28px 0 rgba(226, 105, 91, 0.12);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #251c16;
+    --bg-2: #2f221a;
+    --surface: #2c211a;
+    --surface-alt: #372a21;
+    --ink: #f7ebdf;
+    --ink-muted: #cdb49e;
+    --accent: #f38f80;
+    --accent-soft: #f6b6ab;
+    --gold: #eec46b;
+    --gold-soft: #f2d78f;
+    --border: #4d3a2b;
+    --shadow: 20px 28px 0 rgba(0, 0, 0, 0.32);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #251c16;
+      --bg-2: #2f221a;
+      --surface: #2c211a;
+      --surface-alt: #372a21;
+      --ink: #f7ebdf;
+      --ink-muted: #cdb49e;
+      --accent: #f38f80;
+      --accent-soft: #f6b6ab;
+      --gold: #eec46b;
+      --gold-soft: #f2d78f;
+      --border: #4d3a2b;
+      --shadow: 20px 28px 0 rgba(0, 0, 0, 0.32);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+
+  .hero {
+    position: relative;
+    margin: 0 -20px 40px;
+    padding: 56px 20px 48px;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(226, 105, 91, 0.16) 0, transparent 42%),
+      radial-gradient(circle at 88% 8%, rgba(224, 171, 63, 0.18) 0, transparent 45%),
+      linear-gradient(180deg, var(--bg-2), var(--bg));
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .motif {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 20px;
+    animation: bounce 3.5s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .motif { animation: none; }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-size: clamp(28px, 6vw, 38px);
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-width: 46ch;
+    margin: 0 auto;
+    text-wrap: balance;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 28px 26px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .item:nth-child(2) { background: var(--surface-alt); }
+
+  .item:hover {
+    transform: translateY(-3px);
+    box-shadow: 24px 34px 0 rgba(226, 105, 91, 0.16);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .item { transition: none; }
+    .item:hover { transform: none; }
+  }
+
+  .item-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .item h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .item p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin: 0 0 20px;
+    max-width: 60ch;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #fff6f3;
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 6px 0 rgba(148, 55, 44, 0.28);
+  }
+
+  .cta:hover { transform: translateY(-2px); }
+  .cta:active { transform: translateY(1px); box-shadow: 0 3px 0 rgba(148, 55, 44, 0.28); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+    .cta:hover, .cta:active { transform: none; }
+  }
+
+  .cta svg { width: 14px; height: 14px; }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .disclosure {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+</style>
+
+<div class="page">
+  <div class="hero">
+    <svg class="motif" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <rect x="16" y="26" width="68" height="48" rx="10" fill="var(--accent-soft)"/>
+      <rect x="16" y="26" width="68" height="48" rx="10" stroke="var(--accent)" stroke-width="3"/>
+      <line x1="50" y1="26" x2="50" y2="74" stroke="var(--accent)" stroke-width="3"/>
+      <circle cx="33" cy="50" r="9" fill="var(--gold-soft)"/>
+      <circle cx="67" cy="44" r="6" fill="#8bb27a"/>
+      <circle cx="67" cy="60" r="6" fill="#e07850"/>
+    </svg>
+    <span class="eyebrow">The Bento Box Edit</span>
+    <h1>Build Your Perfect Bento Box</h1>
+    <p class="lede">Cute compartments, playful accessories, and rice ball tools — shop the exact pieces styled in every pin to make your own aesthetic bento lunch.</p>
+  </div>
+
+  <div class="items">
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="7" y="12" width="30" height="22" rx="5" fill="var(--accent-soft)"/>
+        <line x1="22" y1="12" x2="22" y2="34" stroke="var(--accent)" stroke-width="2"/>
+        <circle cx="14.5" cy="23" r="4" fill="var(--gold-soft)"/>
+        <circle cx="29.5" cy="23" r="4" fill="#8bb27a"/>
+      </svg>
+      <h2>Kawaii Bento Box with Compartments</h2>
+      <p>A cute, leak-proof lunch box with neat compartments and a matching bag and tableware — the perfect statement piece for aesthetic bento lunches.</p>
+      <a class="cta" href="https://amzn.to/3RMPa4x" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <circle cx="16" cy="16" r="5" fill="var(--gold-soft)"/>
+        <circle cx="28" cy="16" r="5" fill="var(--accent-soft)"/>
+        <circle cx="22" cy="28" r="5" fill="#8bb27a"/>
+        <line x1="16" y1="21" x2="16" y2="30" stroke="var(--ink-muted)" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="28" y1="21" x2="28" y2="30" stroke="var(--ink-muted)" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <h2>Bento Box Accessories Set</h2>
+      <p>A big set of cute animal food picks, silicone dividers, and mini sauce bottles — everything you need to style a picture-perfect bento lunch.</p>
+      <a class="cta" href="https://amzn.to/4woqfCv" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <circle cx="18" cy="22" r="11" fill="#fdfaf3" stroke="var(--border)" stroke-width="1.4"/>
+        <circle cx="14.5" cy="19" r="1.4" fill="var(--ink)"/>
+        <circle cx="21.5" cy="19" r="1.4" fill="var(--ink)"/>
+        <path d="M15 25 Q18 28 21 25" stroke="var(--ink)" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+        <rect x="30" y="10" width="8" height="10" rx="1.5" fill="var(--ink-muted)"/>
+      </svg>
+      <h2>Rice Ball Mold &amp; Nori Punch Set</h2>
+      <p>Onigiri molds and a nori seaweed punch tool for making adorable character rice balls — a fun, easy way to bring kyaraben charm to any bento.</p>
+      <a class="cta" href="https://amzn.to/4i7ysau" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+  </div>
+
+  <footer>
+    <p class="disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+  </footer>
+</div>

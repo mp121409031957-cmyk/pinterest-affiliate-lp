@@ -1,0 +1,265 @@
+<title>Vintage Halloween Home Decor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #f7ecd7;
+    --bg-2: #ecd6a8;
+    --surface: #fffaf0;
+    --surface-alt: #f9f0dc;
+    --ink: #2e2013;
+    --ink-muted: #7a6248;
+    --accent: #3a2a18;
+    --accent-soft: #6b4f30;
+    --pumpkin: #c1501e;
+    --pumpkin-soft: #e08a3f;
+    --border: #e2cd9e;
+    --shadow: 20px 28px 0 rgba(193, 80, 30, 0.14);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #1c150d;
+    --bg-2: #251c11;
+    --surface: #241b12;
+    --surface-alt: #2c2116;
+    --ink: #f2e4c8;
+    --ink-muted: #c7a97a;
+    --accent: #f0dfb8;
+    --accent-soft: #c7a97a;
+    --pumpkin: #e6875a;
+    --pumpkin-soft: #efab73;
+    --border: #3a2c1a;
+    --shadow: 20px 28px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1c150d;
+      --bg-2: #251c11;
+      --surface: #241b12;
+      --surface-alt: #2c2116;
+      --ink: #f2e4c8;
+      --ink-muted: #c7a97a;
+      --accent: #f0dfb8;
+      --accent-soft: #c7a97a;
+      --pumpkin: #e6875a;
+      --pumpkin-soft: #efab73;
+      --border: #3a2c1a;
+      --shadow: 20px 28px 0 rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+
+  .hero {
+    position: relative;
+    margin: 0 -20px 40px;
+    padding: 56px 20px 48px;
+    background:
+      radial-gradient(circle at 15% 15%, rgba(193, 80, 30, 0.18) 0, transparent 45%),
+      radial-gradient(circle at 88% 85%, rgba(58, 42, 24, 0.12) 0, transparent 50%),
+      linear-gradient(180deg, var(--bg-2), var(--bg));
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .motif {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 20px;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--pumpkin);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-family: Georgia, "Iowan Old Style", Palatino, serif;
+    font-size: clamp(28px, 6vw, 38px);
+    line-height: 1.18;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-width: 46ch;
+    margin: 0 auto;
+    text-wrap: balance;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 28px 26px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .item:nth-child(2) { background: var(--surface-alt); }
+
+  .item:hover {
+    transform: translateY(-3px);
+    box-shadow: 24px 34px 0 rgba(193, 80, 30, 0.18);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .item { transition: none; }
+    .item:hover { transform: none; }
+  }
+
+  .item-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+  }
+
+  .item h2 {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .item p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin: 0 0 20px;
+    max-width: 60ch;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 6px 0 var(--pumpkin);
+  }
+
+  .cta:hover { transform: translateY(-2px); }
+  .cta:active { transform: translateY(1px); box-shadow: 0 3px 0 var(--pumpkin); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+    .cta:hover, .cta:active { transform: none; }
+  }
+
+  .cta svg { width: 14px; height: 14px; }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .disclosure {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+</style>
+
+<div class="page">
+  <div class="hero">
+    <svg class="motif" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <path d="M30 62 Q28 34 50 28 Q72 34 70 62 Z" fill="var(--pumpkin-soft)" opacity="0.55"/>
+      <path d="M22 62 L78 62 L74 74 L26 74 Z" fill="var(--accent-soft)"/>
+      <path d="M40 40 Q42 30 50 30 Q58 30 60 40" stroke="var(--pumpkin)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <ellipse cx="42" cy="46" rx="2.4" ry="3" fill="var(--accent)"/>
+      <ellipse cx="58" cy="46" rx="2.4" ry="3" fill="var(--accent)"/>
+      <path d="M46 54 Q50 57 54 54" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </svg>
+    <span class="eyebrow">The Retro Autumn Edit</span>
+    <h1>Vintage Halloween Home Decor</h1>
+    <p class="lede">Retro black cats, curly moons, and mustard-and-burnt-orange charm — shop the exact vintage-style pieces styled in every pin for a cozy, curated Halloween porch and living room.</p>
+  </div>
+
+  <div class="items">
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="6" y="14" width="32" height="18" rx="3" fill="var(--pumpkin-soft)"/>
+        <path d="M14 18 Q13 25 20 27 Q22 21 20 18 Z" fill="var(--accent-soft)"/>
+        <circle cx="30" cy="22" r="4" fill="var(--surface)"/>
+      </svg>
+      <h2>Vintage Halloween Doormat</h2>
+      <p>A retro black cat, jack-o-lantern, and crescent moon design in warm mustard and burnt orange — the welcoming first touch of a curated vintage Halloween porch.</p>
+      <a class="cta" href="https://amzn.to/4wMOFG9" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="10" y="14" width="24" height="16" rx="2" fill="var(--accent-soft)"/>
+        <path d="M22 6 L14 14 M22 6 L30 14" stroke="var(--pumpkin)" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+        <rect x="14" y="19" width="16" height="2.4" rx="1.2" fill="var(--surface)"/>
+        <rect x="14" y="24" width="10" height="2.4" rx="1.2" fill="var(--surface)"/>
+      </svg>
+      <h2>Retro "Trick or Treat" Porch Sign</h2>
+      <p>A vintage-typography wooden hanging sign that brings nostalgic, farmhouse-style charm to any front door or porch wall.</p>
+      <a class="cta" href="https://amzn.to/4wzadpr" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+        <rect x="7" y="12" width="14" height="14" rx="2" fill="var(--pumpkin-soft)"/>
+        <rect x="23" y="16" width="14" height="14" rx="2" fill="var(--accent-soft)"/>
+        <path d="M11 19 Q14 15 17 19" stroke="var(--accent)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      </svg>
+      <h2>Vintage Halloween Pillow Covers</h2>
+      <p>Retro black cat and witch silhouette pillow covers in a mustard and burnt orange palette — an easy seasonal refresh for the sofa or armchair.</p>
+      <a class="cta" href="https://amzn.to/4qe7kZy" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+  </div>
+
+  <footer>
+    <p class="disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+  </footer>
+</div>

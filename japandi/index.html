@@ -1,0 +1,290 @@
+<title>The Japandi Home Edit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --bg: #f4efe7;
+    --bg-2: #e9e0d1;
+    --surface: #fbf9f5;
+    --surface-alt: #efe6d8;
+    --ink: #3a352e;
+    --ink-muted: #8d8272;
+    --accent: #6f7d5f;
+    --accent-soft: #a3af95;
+    --walnut: #8a5a3c;
+    --walnut-soft: #c79b7a;
+    --border: #e2d8c7;
+    --shadow: 20px 28px 0 rgba(58, 53, 46, 0.06);
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #221f1a;
+    --bg-2: #2b2721;
+    --surface: #29251f;
+    --surface-alt: #322d25;
+    --ink: #ece5d8;
+    --ink-muted: #b3a897;
+    --accent: #9fb08d;
+    --accent-soft: #c3cdb4;
+    --walnut: #c9946c;
+    --walnut-soft: #e0b48c;
+    --border: #423c33;
+    --shadow: 20px 28px 0 rgba(0, 0, 0, 0.35);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #221f1a;
+      --bg-2: #2b2721;
+      --surface: #29251f;
+      --surface-alt: #322d25;
+      --ink: #ece5d8;
+      --ink-muted: #b3a897;
+      --accent: #9fb08d;
+      --accent-soft: #c3cdb4;
+      --walnut: #c9946c;
+      --walnut-soft: #e0b48c;
+      --border: #423c33;
+      --shadow: 20px 28px 0 rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+  }
+
+  .hero {
+    position: relative;
+    margin: 0 -20px 44px;
+    padding: 60px 20px 50px;
+    background:
+      radial-gradient(circle at 14% 20%, rgba(111, 125, 95, 0.14) 0, transparent 44%),
+      radial-gradient(circle at 86% 10%, rgba(138, 90, 60, 0.12) 0, transparent 46%),
+      linear-gradient(180deg, var(--bg-2), var(--bg));
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .motif {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 22px;
+    animation: glow 5s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .motif { animation: none; }
+  }
+
+  @keyframes glow {
+    0%, 100% { opacity: 0.85; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(-4px); }
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--walnut);
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+    font-size: clamp(28px, 6vw, 40px);
+    line-height: 1.22;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    margin: 0 0 16px;
+    text-wrap: balance;
+  }
+
+  .lede {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    max-width: 44ch;
+    margin: 0 auto;
+    text-wrap: balance;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 30px 26px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .item:nth-child(2) { background: var(--surface-alt); }
+
+  .item:hover {
+    transform: translateY(-3px);
+    box-shadow: 24px 34px 0 rgba(58, 53, 46, 0.08);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .item { transition: none; }
+    .item:hover { transform: none; }
+  }
+
+  .item-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 16px;
+  }
+
+  .item h2 {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    font-weight: 500;
+    margin: 0 0 10px;
+    letter-spacing: -0.005em;
+  }
+
+  .item p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink-muted);
+    margin: 0 0 20px;
+    max-width: 60ch;
+  }
+
+  .fit-tag {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
+    padding: 4px 11px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--walnut);
+    color: #fbf3ec;
+    font-size: 14.5px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 6px 0 rgba(90, 58, 38, 0.28);
+  }
+
+  .cta:hover { transform: translateY(-2px); }
+  .cta:active { transform: translateY(1px); box-shadow: 0 3px 0 rgba(90, 58, 38, 0.28); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta { transition: none; }
+    .cta:hover, .cta:active { transform: none; }
+  }
+
+  .cta svg { width: 14px; height: 14px; }
+
+  footer {
+    margin-top: 44px;
+    padding-top: 26px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .disclosure {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+</style>
+
+<div class="page">
+  <div class="hero">
+    <svg class="motif" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <line x1="50" y1="10" x2="50" y2="28" stroke="var(--walnut)" stroke-width="2" stroke-linecap="round"/>
+      <ellipse cx="50" cy="52" rx="26" ry="22" fill="var(--walnut-soft)" opacity="0.55"/>
+      <path d="M28 52 C28 40 38 30 50 30 C62 30 72 40 72 52" stroke="var(--walnut)" stroke-width="2" fill="none"/>
+      <path d="M24 74 L76 74" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+      <circle cx="50" cy="52" r="6" fill="var(--surface)" opacity="0.8"/>
+    </svg>
+    <span class="eyebrow">The Japandi Home Edit</span>
+    <h1>Bring Calm Home: Japandi Essentials for Every Room</h1>
+    <p class="lede">Warm light, quiet texture, natural material — shop the exact pieces styled in every pin to bring a Japandi mood into your own space.</p>
+  </div>
+
+  <div class="items">
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <line x1="20" y1="4" x2="20" y2="12" stroke="var(--walnut)" stroke-width="1.8" stroke-linecap="round"/>
+        <ellipse cx="20" cy="22" rx="12" ry="10" fill="var(--walnut-soft)"/>
+        <path d="M8 22 C8 15 13 10 20 10 C27 10 32 15 32 22" stroke="var(--walnut)" stroke-width="1.6" fill="none"/>
+        <line x1="12" y1="34" x2="28" y2="34" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <span class="fit-tag">Noguchi-style pleated shade</span>
+      <h2>Washi Paper Pendant Lamp</h2>
+      <p>A Noguchi-inspired pleated washi paper shade that casts a soft, warm glow — the kind of quiet lighting that instantly makes a bedroom or reading corner feel calmer.</p>
+      <a class="cta" href="https://amzn.to/4wSvJGP" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M14 14 C14 11 16 9 20 9 C24 9 26 11 26 14 L27 30 C27 33 24 35 20 35 C16 35 13 33 13 30 Z" fill="var(--accent-soft)"/>
+        <path d="M15 14 L25 14" stroke="var(--ink)" stroke-width="1.2" opacity="0.35"/>
+      </svg>
+      <span class="fit-tag">Set of 3, sand &amp; grey</span>
+      <h2>Stoneware Vase Set</h2>
+      <p>A trio of matte stoneware vases in neutral sand and grey tones, sized to mix and match — the effortless, uncluttered styling piece for any shelf or console table.</p>
+      <a class="cta" href="https://amzn.to/4q50RA6" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+
+    <article class="item">
+      <svg class="item-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect x="8" y="12" width="24" height="20" rx="3" fill="var(--walnut-soft)" opacity="0.6"/>
+        <path d="M8 15 Q20 22 32 15" stroke="var(--walnut)" stroke-width="1.4" fill="none" opacity="0.6"/>
+        <path d="M8 29 Q20 22 32 29" stroke="var(--walnut)" stroke-width="1.4" fill="none" opacity="0.6"/>
+      </svg>
+      <span class="fit-tag">Set of 2, stonewashed linen</span>
+      <h2>Linen Cushion Covers</h2>
+      <p>Soft, stonewashed linen cushion covers in natural, undyed tones that add texture and warmth to any sofa — an easy way to bring Japandi calm into the living room.</p>
+      <a class="cta" href="https://amzn.to/4hYSjZp" target="_blank" rel="noopener sponsored nofollow">
+        Shop on Amazon
+        <svg viewBox="0 0 16 16" fill="none"><path d="M4 12 L12 4 M12 4 H6 M12 4 V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </article>
+  </div>
+
+  <footer>
+    <p class="disclosure">As an Amazon Associate I earn from qualifying purchases.</p>
+  </footer>
+</div>
