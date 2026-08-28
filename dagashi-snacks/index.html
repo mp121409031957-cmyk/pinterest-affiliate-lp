@@ -48,9 +48,26 @@
   .rating .count { color: #888; margin-left: 0.4em; }
   .price { font-weight: bold; font-size: 1.15rem; margin-bottom: 0.6rem; }
   .blurb { margin: 0 0 1rem; line-height: 1.6; }
+  .quote {
+    margin: 0 0 1rem;
+    padding: 0.6rem 1rem;
+    border-left: 3px solid var(--primary);
+    background: var(--background);
+    font-style: italic;
+    line-height: 1.5;
+  }
+  .quote::before { content: "\201C"; }
+  .quote::after { content: "\201D"; }
+  .quote-attr {
+    display: block;
+    margin-top: 0.4rem;
+    font-style: normal;
+    font-size: 0.8rem;
+    color: #888;
+  }
   .cta {
     display: inline-block;
-    background: var(--accent);
+    background: var(--primary);
     color: #fff;
     text-decoration: none;
     padding: 0.7rem 1.4rem;
@@ -80,6 +97,7 @@
     
     <div class="price">$21.50</div>
     <p class="blurb">The iconic chocolate-dipped biscuit stick from Japan — this variety pack brings Strawberry, Chocolate, and Cookies & Cream together for the ultimate dagashi lineup.</p>
+    
     <a class="cta" href="https://amazon.com/dp/B0B5HKWX61?tag=naoko08-20" target="_blank" rel="nofollow noopener sponsored">View on Amazon →</a>
   </div>
   
@@ -91,6 +109,7 @@
     
     <div class="price">$6.22</div>
     <p class="blurb">Hi-Chew's soft, intensely fruity chews are a Japanese candy-aisle staple — this Regular Mix bag blends Grape, Strawberry, and other classic flavors in one bag.</p>
+    
     <a class="cta" href="https://amazon.com/dp/B00886GV1A?tag=naoko08-20" target="_blank" rel="nofollow noopener sponsored">View on Amazon →</a>
   </div>
   
@@ -102,6 +121,7 @@
     
     <div class="price">$4.99</div>
     <p class="blurb">Kasugai's soft fruit gummies are a beloved Japanese candy-shop classic, made with real fruit juice in a mixed-flavor assortment — perfect for snack-box gifting.</p>
+    
     <a class="cta" href="https://amazon.com/dp/B00FYK4K3O?tag=naoko08-20" target="_blank" rel="nofollow noopener sponsored">View on Amazon →</a>
   </div>
   

@@ -48,9 +48,26 @@
   .rating .count { color: #888; margin-left: 0.4em; }
   .price { font-weight: bold; font-size: 1.15rem; margin-bottom: 0.6rem; }
   .blurb { margin: 0 0 1rem; line-height: 1.6; }
+  .quote {
+    margin: 0 0 1rem;
+    padding: 0.6rem 1rem;
+    border-left: 3px solid var(--primary);
+    background: var(--background);
+    font-style: italic;
+    line-height: 1.5;
+  }
+  .quote::before { content: "\201C"; }
+  .quote::after { content: "\201D"; }
+  .quote-attr {
+    display: block;
+    margin-top: 0.4rem;
+    font-style: normal;
+    font-size: 0.8rem;
+    color: #888;
+  }
   .cta {
     display: inline-block;
-    background: var(--accent);
+    background: var(--primary);
     color: #fff;
     text-decoration: none;
     padding: 0.7rem 1.4rem;
@@ -80,6 +97,7 @@
     
     <div class="price">$10.99</div>
     <p class="blurb">The best-selling matcha on Amazon, with over 83,000 reviews — organic culinary-grade Japanese green tea powder that's perfect for lattes, baking, and smoothies.</p>
+    
     <a class="cta" href="https://amazon.com/dp/B00PFDH0IC?tag=naoko08-20" target="_blank" rel="nofollow noopener sponsored">View on Amazon →</a>
   </div>
   
@@ -91,6 +109,7 @@
     
     <div class="price">$19.99</div>
     <p class="blurb">Encha's organic first-harvest ceremonial matcha comes straight from Uji, Japan — smooth, naturally sweet, and the most-purchased premium matcha on Amazon.</p>
+    
     <a class="cta" href="https://amazon.com/dp/B06XXQF4DB?tag=naoko08-20" target="_blank" rel="nofollow noopener sponsored">View on Amazon →</a>
   </div>
   
@@ -102,6 +121,7 @@
     
     <div class="price">$24.99</div>
     <p class="blurb">Naoki blends Uji and Kagoshima ceremonial-grade leaves for a rich, well-rounded matcha — a top pick for anyone building a daily matcha ritual.</p>
+    
     <a class="cta" href="https://amazon.com/dp/B01L2GW7SI?tag=naoko08-20" target="_blank" rel="nofollow noopener sponsored">View on Amazon →</a>
   </div>
   
@@ -113,6 +133,7 @@
     
     <div class="price">$26.99</div>
     <p class="blurb">The step-up from Jade Leaf's #1 bestseller — this Teahouse Edition ceremonial-grade tin is smoother and more refined, ideal for traditional tea ceremonies or a silkier matcha latte.</p>
+    
     <a class="cta" href="https://amazon.com/dp/B014LT0712?tag=naoko08-20" target="_blank" rel="nofollow noopener sponsored">View on Amazon →</a>
   </div>
   

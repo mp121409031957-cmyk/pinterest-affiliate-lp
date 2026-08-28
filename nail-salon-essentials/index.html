@@ -48,9 +48,26 @@
   .rating .count { color: #888; margin-left: 0.4em; }
   .price { font-weight: bold; font-size: 1.15rem; margin-bottom: 0.6rem; }
   .blurb { margin: 0 0 1rem; line-height: 1.6; }
+  .quote {
+    margin: 0 0 1rem;
+    padding: 0.6rem 1rem;
+    border-left: 3px solid var(--primary);
+    background: var(--background);
+    font-style: italic;
+    line-height: 1.5;
+  }
+  .quote::before { content: "\201C"; }
+  .quote::after { content: "\201D"; }
+  .quote-attr {
+    display: block;
+    margin-top: 0.4rem;
+    font-style: normal;
+    font-size: 0.8rem;
+    color: #888;
+  }
   .cta {
     display: inline-block;
-    background: var(--accent);
+    background: var(--primary);
     color: #fff;
     text-decoration: none;
     padding: 0.7rem 1.4rem;
@@ -80,6 +97,7 @@
     
     <div class="price">$14.98</div>
     <p class="blurb">Press-on nails with a gel finish that hold for up to 10 days — no glue, no dry time, no salon appointment needed.</p>
+    
     <a class="cta" href="https://amzn.to/4zgmLVc" target="_blank" rel="nofollow noopener sponsored">View on Amazon →</a>
   </div>
   
@@ -91,6 +109,7 @@
     
     <div class="price">$47.49</div>
     <p class="blurb">A complete DIY gel polish kit with UV lamp, base and top coat, and dozens of colors — everything you need for a long-lasting home manicure.</p>
+    
     <a class="cta" href="https://amzn.to/4zEi4oy" target="_blank" rel="nofollow noopener sponsored">View on Amazon →</a>
   </div>
   
@@ -102,6 +121,7 @@
     
     <div class="price">$15.99</div>
     <p class="blurb">A compact pen-style electric nail file for shaping, buffing, and gel removal — the salon tool that makes at-home manicures last longer.</p>
+    
     <a class="cta" href="https://www.amazon.com/dp/B01H05EDK0?tag=naoko08-20" target="_blank" rel="nofollow noopener sponsored">View on Amazon →</a>
   </div>
   
